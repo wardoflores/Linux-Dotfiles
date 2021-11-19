@@ -29,7 +29,7 @@ set $menu wofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/pen-syls.png fill
+output * bg ~/Pictures/Andrea-Koroveshi.png fill
 #
 # Example configuration:
 #
@@ -50,11 +50,7 @@ output * bg ~/Pictures/pen-syls.png fill
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-# exec mako --default-timeout 5000 &
-exec pulseaudio --start
-exec pavucontrol
-
-### Input configuration
+# Input configuration
 #
 # Example configuration:
 #
@@ -136,21 +132,22 @@ input * accel_profile flat
 #
 # screenshot controls (grim and slurp)
 #
-    bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy
+    bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | wl-copy
+    bindsym $mod+Print exec grim - | wl-copy
 
 #
 # Workspaces:
 #
-set $ws1 "1: Terminals   "
-set $ws2 "2: Browser   "
-set $ws3 "3: Files  "
-set $ws4 "4: Office  "
-set $ws5 "5: Multimedia   "
-set $ws6 "6: Reader   "
-set $ws7 "7: Code   "
-set $ws8 "8: Media Editors   "
-set $ws9 "9: Settings   "
-set $ws10 "10: Music  "
+set $ws1 "[ 1:   ]"
+set $ws2 "[ 2:   ]"
+set $ws3 "[ 3:   ]"
+set $ws4 "[ 4:   ]"
+set $ws5 "[ 5:   ]"
+set $ws6 "[ 6:   ]"
+set $ws7 "[ 7: ﬏  ]"
+set $ws8 "[ 8:   ]"
+set $ws9 "[ 9:   ]"
+set $ws10 "[10:   ]"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -176,6 +173,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# workspace layouts for specific workspaces
+#set $ws3 workspace_layout tabbed
+#set $ws4 workspace_layout tabbed
+#set $ws5 workspace_layout tabbed
+#set $ws7 workspace_layout tabbed
+#set $ws8 workspace_layout tabbed
+
 # come back to your last workspaces with the same keystroke
 workspace_auto_back_and_forth yes
 
@@ -183,18 +187,30 @@ workspace_auto_back_and_forth yes
 assign [app_id="Alacritty"] $ws1
 assign [app_id="brave-browser"] $ws2
 assign [app_id="thunar"] $ws3
-assign [app_id="GitHub Desktop"] $ws3
+assign [app_id="fsearch"] $ws3
+assign [instance="github desktop"] $ws3
 assign [app_id="org.qbittorrent.qBittorrent"] $ws3
 assign [app_id="libreoffice-startcenter"] $ws4
+assign [app_id="homebank"] $ws4
 assign [app_id="mpv"] $ws5
+assign [app_id="droidcam"] $ws5
+assign [instance="discord"] $ws5
+assign [class="discord"] $ws5
+assign [class="Mainwindow.py"] $ws5
 assign [app_id="retroarch"] $ws5
+assign [app_id="lutris"] $ws5
+assign [class="Steam"] $ws5
+assign [class="net-runelite-client-RuneLite"] $ws5
+assign [class="net-runelite-launcher-Launcher"] $ws5
 assign [app_id="obsidian"] $ws6
+assign [app_id="com.github.babluboy.bookworm"] $ws6
 assign [app_id="org.gnome.Maps"] $ws6
 assign [app_id="Code"] $ws7
 assign [app_id="krita"] $ws8
 assign [app_id="tenacity"] $ws8
 assign [app_id="pavucontrol"] $ws9
-assign [app_id="spotify-qt"] $ws10
+assign [class="Gpick"] $ws9
+assign [class="Spotify"] $ws10
 
 # for_window [app_id=""] something
 #
@@ -305,3 +321,8 @@ default_border none
 gaps inner 7
 
 include /etc/sway/config.d/*
+
+# exec mako --default-timeout 5000 &
+
+exec brave
+exec obsidian

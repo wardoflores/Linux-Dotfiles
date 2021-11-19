@@ -1,10 +1,12 @@
 style=.config/wofi/style.css
 show=drun
 width=500
-height=500
+height=250
 always_parse_args=true
-show_all=true
+show_all=false
 print_command=true
 layer=overlay
 insensitive=true
+allow_images=true
+image_size=30
 prompt=
