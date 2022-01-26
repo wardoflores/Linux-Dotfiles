@@ -1,5 +1,5 @@
 * {
-    font-family: Source Code Pro;
+    font-family: monospace;
 }
 
 window .modules-left #workspaces {
@@ -44,8 +44,8 @@ window .modules-left #workspaces button:hover  {
 }
 
 #network, #cpu, #memory, #temperature, #battery, #battery#bat2, #clock, #tray {
-    min-width: 50px;
-    margin: 0px 7px 0px 0px;
+    margin: 0;
+    padding: 0;
 }
 
 #pulseaudio {
@@ -66,7 +66,7 @@ window .modules-left #workspaces button:hover  {
 /*}*/
 
 #clock {
-    margin: 0px 14px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 #mode {
@@ -79,7 +79,7 @@ window .modules-left #workspaces button:hover  {
 
 
 #battery {
-    margin: 0px 10px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 #memory {

@@ -7,7 +7,7 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod1
+set $mod Mod4
 
 # Home row direction keys, like vim
 set $left h
@@ -16,7 +16,7 @@ set $up k
 set $right l
 
 # Your preferred font
-font pango:Cascadia Code 10
+font pango:victor-pixel 12
 
 # Your preferred terminal emulator
 set $term alacritty
@@ -29,13 +29,25 @@ set $menu wofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Andrea-Koroveshi.png fill
+#output * bg ~/Pictures/Andrea-Koroveshi.png fill
+exec redshift -l 7.0645451:125.6084371
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+seat seat0 xcursor_theme Adwaita 0
+
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Graphite-dark'
+    #gsettings reset $gnome-schema cursor-theme
+}
+
+exec_always import-gsettings
 
 ### Idle configuration
 #
@@ -136,18 +148,24 @@ input * accel_profile flat
     bindsym $mod+Print exec grim - | wl-copy
 
 #
+# color picker
+#
+    bindsym $mod+F12 exec wl-color-picker clipboard
+    bindsym $mod+shift+F12 exec wl-color-picker
+
+#
 # Workspaces:
 #
-set $ws1 "[ 1:   ]"
-set $ws2 "[ 2:   ]"
-set $ws3 "[ 3:   ]"
-set $ws4 "[ 4:   ]"
-set $ws5 "[ 5:   ]"
-set $ws6 "[ 6:   ]"
-set $ws7 "[ 7: ﬏  ]"
-set $ws8 "[ 8:   ]"
-set $ws9 "[ 9:   ]"
-set $ws10 "[10:   ]"
+set $ws1 "[1: ]"
+set $ws2 "[2: ]"
+set $ws3 "[3: ]"
+set $ws4 "[4: ]"
+set $ws5 "[5: ]"
+set $ws6 "[6: ]"
+set $ws7 "[7: ]"
+set $ws8 "[8: ]"
+set $ws9 "[9: ]"
+set $ws10 "[10: ]"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -188,10 +206,8 @@ assign [app_id="Alacritty"] $ws1
 assign [app_id="brave-browser"] $ws2
 assign [app_id="thunar"] $ws3
 assign [app_id="fsearch"] $ws3
-assign [instance="github desktop"] $ws3
 assign [app_id="org.qbittorrent.qBittorrent"] $ws3
 assign [app_id="libreoffice-startcenter"] $ws4
-assign [app_id="homebank"] $ws4
 assign [app_id="mpv"] $ws5
 assign [app_id="droidcam"] $ws5
 assign [instance="discord"] $ws5
@@ -206,13 +222,17 @@ assign [app_id="obsidian"] $ws6
 assign [app_id="com.github.babluboy.bookworm"] $ws6
 assign [app_id="org.gnome.Maps"] $ws6
 assign [app_id="Code"] $ws7
+assign [instance="github desktop"] $ws7
 assign [app_id="krita"] $ws8
 assign [app_id="tenacity"] $ws8
 assign [app_id="pavucontrol"] $ws9
+assign [instance="lxappearance"] $ws9
 assign [class="Gpick"] $ws9
 assign [class="Spotify"] $ws10
 
+# assign [=""] $ws
 # for_window [app_id=""] something
+
 #
 # Layout stuff:
 #
@@ -324,5 +344,8 @@ include /etc/sway/config.d/*
 
 # exec mako --default-timeout 5000 &
 
+exec alacritty
+exec alacritty -e syncthing
 exec brave
 exec obsidian
+exec github-desktop
