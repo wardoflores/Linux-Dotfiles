@@ -16,7 +16,7 @@ set $up k
 set $right l
 
 # Your preferred font
-font pango:victor-pixel 12
+font pango:Cascadia Code 9
 
 # Your preferred terminal emulator
 set $term alacritty
@@ -29,7 +29,7 @@ set $menu wofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg ~/Pictures/Andrea-Koroveshi.png fill
+output * bg ~/Downloads/wallhaven-v93z13_1366x768.png fill
 exec redshift -l 7.0645451:125.6084371
 #
 # Example configuration:
@@ -38,13 +38,14 @@ exec redshift -l 7.0645451:125.6084371
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-seat seat0 xcursor_theme Adwaita 0
+seat seat0 xcursor_theme Breeze_Default 1
 
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Graphite-dark'
-    #gsettings reset $gnome-schema cursor-theme
+    gsettings set $gnome-schema cursor-theme 'Breeze_Default'
+    gsettings set $gnome-schemma cursor-size '1'
 }
 
 exec_always import-gsettings
@@ -77,6 +78,11 @@ exec_always import-gsettings
 # Read `man 5 sway-input` for more information about this section.
 
 input * accel_profile flat
+
+# For polkit
+
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 
 ### Key bindings
 #
@@ -203,31 +209,36 @@ workspace_auto_back_and_forth yes
 
 # assign [app_id=""] $ws1
 assign [app_id="Alacritty"] $ws1
-assign [app_id="brave-browser"] $ws2
+assign [instance="brave-browser-nightly"] $ws2
 assign [app_id="thunar"] $ws3
 assign [app_id="fsearch"] $ws3
 assign [app_id="org.qbittorrent.qBittorrent"] $ws3
-assign [app_id="libreoffice-startcenter"] $ws4
+assign [class="obsidian"] $ws4
+assign [app_id="microsoft-offic -online"] $ws4
 assign [app_id="mpv"] $ws5
 assign [app_id="droidcam"] $ws5
 assign [instance="discord"] $ws5
 assign [class="discord"] $ws5
 assign [class="Mainwindow.py"] $ws5
-assign [app_id="retroarch"] $ws5
 assign [app_id="lutris"] $ws5
+assign [class="itch"] $ws5
+assign [class="heroic"] $ws5
 assign [class="Steam"] $ws5
 assign [class="net-runelite-client-RuneLite"] $ws5
 assign [class="net-runelite-launcher-Launcher"] $ws5
-assign [app_id="obsidian"] $ws6
 assign [app_id="com.github.babluboy.bookworm"] $ws6
 assign [app_id="org.gnome.Maps"] $ws6
 assign [app_id="Code"] $ws7
 assign [instance="github desktop"] $ws7
+assign [app_id="obs"] $ws8
 assign [app_id="krita"] $ws8
+assign [app_id="inkscape"] $ws8
+assign [app_id="Olive"] $ws8
+assign [app_id="drawio"] $ws8
 assign [app_id="tenacity"] $ws8
+assign [app_id="librecad"] $ws8
 assign [app_id="pavucontrol"] $ws9
 assign [instance="lxappearance"] $ws9
-assign [class="Gpick"] $ws9
 assign [class="Spotify"] $ws10
 
 # assign [=""] $ws
@@ -318,12 +329,12 @@ bar {
 # Window Settings:
 #
 # colour of border, background, text, indicator, and child_border
-client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused_inactive #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused        #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent           #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder      #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background       #2f343f
+client.focused          #A7A6AC #A7A6AC #242627 #bf616a #d8dee8
+client.focused_inactive #A7A6AC #A7A6AC #242627 #2f343f #2f343f
+client.unfocused        #2f434f #545454 #d8dee8 #2f343f #2f343f
+client.urgent           #2f343f #545454 #d8dee8 #2f343f #2f343f
+client.placeholder      #2f343f #545454 #d8dee8 #2f343f #2f343f
+client.background       #BF616A
 
 # toggle for window focus when cursor is hovered over
 focus_follows_mouse no
@@ -342,10 +353,12 @@ gaps inner 7
 
 include /etc/sway/config.d/*
 
-# exec mako --default-timeout 5000 &
+exec mako
 
 exec alacritty
-exec alacritty -e syncthing
-exec brave
+exec_always alacritty
+exec alacritty -e syncthing -no-browser
+exec brave-nightly
+exec thunar
 exec obsidian
 exec github-desktop
