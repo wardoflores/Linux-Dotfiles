@@ -1,12 +1,9 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
+
+# Uncomment to disable XWayland
+# xwayland disable
+
+# Logo key. Use Mod1 for Alt | Mod4 for Win
 set $mod Mod4
 
 # Home row direction keys, like vim
@@ -15,8 +12,8 @@ set $down j
 set $up k
 set $right l
 
-# Your preferred font
-font pango:Cascadia Code 9
+# Your preferred font # Commented for erasing title on small bars
+# font pango:Cascadia Code 10
 
 # Your preferred terminal emulator
 set $term alacritty
@@ -29,8 +26,6 @@ set $menu wofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Downloads/wallhaven-v93z13_1366x768.png fill
-exec redshift -l 7.0645451:125.6084371
 #
 # Example configuration:
 #
@@ -38,14 +33,23 @@ exec redshift -l 7.0645451:125.6084371
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
+# output * bg ~/Pictures/wallhaven-v93z13_1366x768.png
+output eDP-1 {
+  	background ~/Pictures/wallhaven-42wlkx_1366x768.png fill
+  	resolution 1366x768
+  }
+
+exec redshift -l 7.0645451:125.6084371
+
 seat seat0 xcursor_theme Breeze_Default 1
+#seat seat0 xcursor_size 1
 
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Graphite-dark'
+    gsettings set $gnome-schema gtk-theme 'Graphite-teal-dark'
     gsettings set $gnome-schema cursor-theme 'Breeze_Default'
-    gsettings set $gnome-schemma cursor-size '1'
+    gsettings set $gnome-schema cursor-size '1'
 }
 
 exec_always import-gsettings
@@ -63,6 +67,11 @@ exec_always import-gsettings
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
+
 # Input configuration
 #
 # Example configuration:
@@ -77,12 +86,11 @@ exec_always import-gsettings
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+# For no Pointer Acceleration
 input * accel_profile flat
 
 # For polkit
-
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
 
 ### Key bindings
 #
@@ -109,6 +117,7 @@ exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
 #
 # Moving around:
 #
@@ -117,7 +126,8 @@ exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
+    
+# Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
@@ -128,11 +138,13 @@ exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
+    
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
 #
 # Alsa waybar controls
 #
@@ -146,6 +158,8 @@ exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #
     bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
     bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+
+exec wl-paste -t text --watch clipboard store --no-persist
 
 #
 # screenshot controls (grim and slurp)
@@ -162,15 +176,15 @@ exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #
 # Workspaces:
 #
-set $ws1 "[1: ]"
+set $ws1 "[1: ]"
 set $ws2 "[2: ]"
 set $ws3 "[3: ]"
-set $ws4 "[4: ]"
-set $ws5 "[5: ]"
-set $ws6 "[6: ]"
-set $ws7 "[7: ]"
-set $ws8 "[8: ]"
-set $ws9 "[9: ]"
+set $ws4 "[4: ]"
+set $ws5 "[5: ]"
+set $ws6 "[6: ]"
+set $ws7 "[7: ]"
+set $ws8 "[8: ]"
+set $ws9 "[9: ]"
 set $ws10 "[10: ]"
 
 # switch to workspace
@@ -209,40 +223,55 @@ workspace_auto_back_and_forth yes
 
 # assign [app_id=""] $ws1
 assign [app_id="Alacritty"] $ws1
+
 assign [instance="brave-browser-nightly"] $ws2
+assign [class="Google-chrome"] $ws2
+
 assign [app_id="thunar"] $ws3
 assign [app_id="fsearch"] $ws3
 assign [app_id="org.qbittorrent.qBittorrent"] $ws3
+
 assign [class="obsidian"] $ws4
-assign [app_id="microsoft-offic -online"] $ws4
-assign [app_id="mpv"] $ws5
-assign [app_id="droidcam"] $ws5
-assign [instance="discord"] $ws5
-assign [class="discord"] $ws5
-assign [class="Mainwindow.py"] $ws5
-assign [app_id="lutris"] $ws5
-assign [class="itch"] $ws5
-assign [class="heroic"] $ws5
-assign [class="Steam"] $ws5
-assign [class="net-runelite-client-RuneLite"] $ws5
-assign [class="net-runelite-launcher-Launcher"] $ws5
-assign [app_id="com.github.babluboy.bookworm"] $ws6
-assign [app_id="org.gnome.Maps"] $ws6
-assign [app_id="Code"] $ws7
-assign [instance="github desktop"] $ws7
-assign [app_id="obs"] $ws8
-assign [app_id="krita"] $ws8
-assign [app_id="inkscape"] $ws8
-assign [app_id="Olive"] $ws8
-assign [app_id="drawio"] $ws8
-assign [app_id="tenacity"] $ws8
-assign [app_id="librecad"] $ws8
+assign [app_id="microsoft-office-online"] $ws4
+assign [app_id="com.github.babluboy.bookworm"] $ws4
+assign [app_id="org.gnome.Maps"] $ws4
+
+assign [app_id="Code"] $ws5
+assign [instance="github desktop"] $ws5
+
+assign [app_id="mpv"] $ws6
+assign [app_id="droidcam"] $ws6
+assign [instance="discord"] $ws6
+assign [class="discord"] $ws6
+assign [class="Mainwindow.py"] $ws6
+assign [app_id="lutris"] $ws6
+assign [class="itch"] $ws6
+assign [class="heroic"] $ws6
+assign [class="Steam"] $ws6
+assign [class="net-runelite-client-RuneLite"] $ws6
+assign [class="net-runelite-launcher-Launcher"] $ws6
+
+assign [app_id="obs"] $ws7
+assign [app_id="krita"] $ws7
+assign [app_id="inkscape"] $ws7
+assign [app_id="Olive"] $ws7
+assign [app_id="drawio"] $ws7
+assign [app_id="tenacity"] $ws7
+assign [app_id="librecad"] $ws7
+
 assign [app_id="pavucontrol"] $ws9
 assign [instance="lxappearance"] $ws9
+
 assign [class="Spotify"] $ws10
 
 # assign [=""] $ws
 # for_window [app_id=""] something
+
+for_window [instance="tk"] floating enable
+for_window [instance="brave-browser-nightly"] fullscreen
+for_window [app_id="thunar"] fullscreen
+for_window [class="obsidian"] fullscreen
+for_window [app_id="microsoft-office-online"] floating enable
 
 #
 # Layout stuff:
@@ -312,6 +341,10 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
 	swaybar_command waybar
+	id 1
+	strip_workspace_numbers yes
+	strip_workspace_name yes
+	separator_symbol |
 	colors {
 	# panel color
         background #2F343F
@@ -328,19 +361,47 @@ bar {
 #
 # Window Settings:
 #
-# colour of border, background, text, indicator, and child_border
-client.focused          #A7A6AC #A7A6AC #242627 #bf616a #d8dee8
-client.focused_inactive #A7A6AC #A7A6AC #242627 #2f343f #2f343f
-client.unfocused        #2f434f #545454 #d8dee8 #2f343f #2f343f
-client.urgent           #2f343f #545454 #d8dee8 #2f343f #2f343f
-client.placeholder      #2f343f #545454 #d8dee8 #2f343f #2f343f
-client.background       #BF616A
+#_border_
+#	The border around the title bar.
+#
+#_background_
+#	The background of the title bar.
+#
+#_text_
+#	The text color of the title bar.
+#
+#_indicator_
+#	The color used to indicate where a new view will open. In a tiled
+#	container, this would paint the right border of the current view if a
+#	new view would be opened to the right.
+#
+#_child_border_
+#	The border around the view itself.
+ 
+# Set colors
+set $bg #BF616A
+set $fg #242627
+set $br #A7A6AC
+set $ia #2f343f
+set $ib #545454
+set $ic #d8dee8
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $br     $br     $fg     $bg       $ic
+client.focused_inactive $br     $br     $fg     $ia       $ia
+client.unfocused        $ia     $ib     $ic     $ia       $ia
+#client.urgent          $ia     $ib     $ic     $ia       $ia
+#client.placeholder     $ia     $ib     $ic     $ia       $ia
+client.background $bg
 
 # toggle for window focus when cursor is hovered over
 focus_follows_mouse no
 
-# window title alignment toggle
+# window title
 title_align center
+font pango:monospace .01
+titlebar_border_thickness 0                                                     
+titlebar_padding 0
 
 # default orientation toggle
 default_orientation horizontal
@@ -355,10 +416,21 @@ include /etc/sway/config.d/*
 
 exec mako
 
-exec alacritty
-exec_always alacritty
-exec alacritty -e syncthing -no-browser
-exec brave-nightly
-exec thunar
-exec obsidian
-exec github-desktop
+exec --no-startup-id
+{
+swaymsg "workspace $ws1; exec $term; exec $term -e syncthing -no-browser"
+swaymsg "workspace $ws2; exec brave-nightly"
+swaymsg "workspace $ws3; exec thunar"
+swaymsg "workspace $ws4; exec obsidian"
+swaymsg "workspace $ws7; exec github-desktop"
+}
+
+#exec alacritty
+#exec alacritty -e syncthing -no-browser
+#exec brave-nightly
+#exec thunar
+#exec obsidian
+#exec github-desktop
+
+# Only opens next app when the previous app closes
+# exec_always 'alacritty; sleep 5; alacritty; sleep 5; thunar'

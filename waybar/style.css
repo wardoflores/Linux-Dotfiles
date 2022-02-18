@@ -1,5 +1,5 @@
 * {
-    font-family: monospace;
+    font-family: "monospace", "Font Awesome 5 Free";
 }
 
 window .modules-left #workspaces {
@@ -49,8 +49,7 @@ window .modules-left #workspaces button:hover  {
 }
 
 #pulseaudio {
-    min-width: 50px;
-    margin: 0px 7px 0px 0px;
+    margin: 0px 0px 0px 0px;
 } 
 
 #custom-word {

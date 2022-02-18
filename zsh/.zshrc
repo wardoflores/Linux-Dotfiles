@@ -1,3 +1,6 @@
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  exec sway
+fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -6,10 +9,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/joey/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -77,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting) # archlinux git zsh-autosuggestions
+plugins=(archlinux zsh-syntax-highlighting) # git
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +109,55 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias aliaslist="grep --only-matching '^alias\s\w*' .zshrc" 
+alias c="clear"
+alias home="cd ~"
+alias btop="btop --utf-force"
+alias sucode="sudo code --user-data-dir=~/root"
+
+alias confwm="sudo nano .config/sway/config"
+alias confbar="sudo nano .config/waybar/config"
+alias confbars="sudo nano .config/waybar/style.css"
+alias confterm="sudo nano .config/alacritty/alacritty.yml"
+alias confsh="sudo nano .zshrc"
+alias makesh="source .zshrc"
+alias confmako="sudo nano .config/mako/config"
+alias confgrub="sudo nano /etc/default/grub"
+alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+#alias confgreet="sudo nano /etc/sddm.conf.d/default.conf"
+#alias confgreettheme="sudo nano /usr/share/sddm/themes/maldives/theme.conf.user"
+#alias testgreet="sddm-greeter --test-mode --theme /usr/share/sddm/themes/maldives"
+
+alias pyserver="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/server/server.py"
+alias pipinstaller="/home/joey/JoeyRepositories/Terminal-Projects/linuxsh/pippackages.sh"
+alias calctui="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/calculator/calctui.py"
+alias calcgui="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/calculator/calcgui.py"
+alias autoclick="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/cursor/autoclick.py"
+alias afkpress="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/cursor/afkpress.py"
+alias afkmove="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/cursor/afkmove.py"
+alias idlescroll="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/cursor/afkscroll.py"
+alias typespam="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/spambot/typespam.py"
+alias filespam="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/spambot/filespam.py"
+alias keylogger="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/keylogger/keylogger.py"
+alias birthday="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/birthdaywisher/happybirthday.py"
+alias meditate="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/meditation/meditate.py"
+alias netspeed="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/internetspeed/speedprinter.py"
+alias wolfram="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/wolramalpha/apicaller.py"
+alias voassist="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/voiceassistant/voasst.py"
+alias votyper="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/voiceassistant/voicetyper.py"
+alias tts="/bin/python /home/joey/JoeyRepositories/Python-Projects/completed/voiceassistant/TTS.py"
+
+alias meetcli="/home/joey/JoeyRepositories/Python-Projects/completed/selenium/meetcli.sh"
+alias meetgui="/home/joey/JoeyRepositories/Python-Projects/completed/selenium/meetgui.sh"
+alias twitterbot="/home/joey/JoeyRepositories/Python-Twitter-Bot/twitterbot.sh"
+alias redditbot="/home/joey/JoeyRepositories/.Other-User-Repositories/Python-Reddit-Bot/redditbot.sh"
+alias discordbot="/home/joey/JoeyRepositories/Python-Discord-bot/discordbot.sh"
+
+alias adbcheck="/home/joey/JoeyRepositories/Android-Projects/adbcheck.sh"
+alias adbrestart="/home/joey/JoeyRepositories/Android-Projects/adbrestart.sh"
+alias scrcpystart="/home/joey/JoeyRepositories/Android-Projects/scrcpystart.sh"
+alias scrcpyrec="/home/joey/JoeyRepositories/Android-Projects/scrcpyrec.sh"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
