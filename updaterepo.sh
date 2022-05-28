@@ -4,6 +4,15 @@ cd ~
 
 sudo cp .zshrc /home/joey/coalemus/sway-dotfiles/zsh/
 
+cd /etc
+
+sudo cp hosts /home/joey/coalemus/sway-dotfiles/
+
+cd ~/.config
+
+sudo cp brave-flags.conf /home/joey/coalemus/sway-dotfiles/
+sudo cp electron-flags.conf /home/joey/coalemus/sway-dotfiles/
+
 cd ~/.config/sway
 
 sudo cp config /home/joey/coalemus/sway-dotfiles/sway/

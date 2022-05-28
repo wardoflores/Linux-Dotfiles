@@ -1,0 +1,9 @@
+# Static table lookup for hostnames.
+# See hosts(5) for details.
+127.0.0.1 localhost
+127.0.0.1 joey
+
+# For Wordpress
+
+127.0.0.1       joey.basewebsite.net    localhost joey
+::1             joey.basewebsite.net    localhost joey
