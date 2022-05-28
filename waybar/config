@@ -6,12 +6,14 @@
     "spacing": 6, // Gaps between modules (*px)
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"], // custom/media 
-    "modules-center": ["custom/media"], // sway/window, mpd, pulseaudio
-    "modules-right": ["network", "cpu", "memory", "temperature", "pulseaudio", "clock"], // idle-inhibitor, sway-language, keyboard-state, backlight, tray, battery, battery#bat2
+    "modules-center": ["custom/word"], // sway/window, mpd, pulseaudio
+    "modules-right": ["battery", "network", "cpu", "memory", "temperature", "pulseaudio", "clock"], // idle-inhibitor, sway-language, keyboard-state, backlight, tray, battery, battery#bat2
     // Modules configuration
     "sway/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true, // Display all workspaces in all outputs
+        "sort-by-name": true,
+	"sort-by-coordinates": true, 
+	"disable-scroll": true,
+        "all-outputs": true, // Display all workspaces in all outputs
          //"disable-markup": true,
          //"persistent_workspaces": {
          //          "{1}": [], // Always show a workspace with name '3', on all outputs if it does not exists
@@ -19,15 +21,19 @@
          //          "{6}": ["eDP-1", "DP-2"] // Always show a workspace with name '5', on outputs 'eDP-1' and 'DP-2' if it does not exists
          //}
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+    "custom/word": {
+	"format-alt": "          •          ",
+        "format": "TASKS: Obsidian, Upwork, Wordpress, Data Science Notes, Room prep for moving out",
+	"on-click-right": "alacritty -e sudo /bin/python /home/joey/coalemus/Python-Projects/shellupdate/updatebartui.py",
+	//"max-length": 40,
+        //"exec": "grep --only-matching '^alias\\s\\w*' .zshrc",
+    	//"return-type": "json",
+	//"escape": true
+	//"on-click": "", 
+    	//"on-click-middle": "",
+	//"on-scroll-up": "",
+    	//"on-scroll-down": "",
+	//"smooth-scrolling-threshold": 5,
     },
     "tray": {
         // "icon-size": 21,
@@ -35,12 +41,12 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "[ {essid} ({signalStrength}%)  ]",
+        "format-wifi": "[  ]",
         "format-ethernet": "[ {ipaddr}/{cidr}  ]",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "[ Disconnected ⚠ ]",
-        "format-alt": "[  ]" // {ifname}: {ipaddr}/{cidr}
+        "format-alt": "[ {essid} ({signalStrength}%)  ]" // {ifname}: {ipaddr}/{cidr}
     },
     "cpu": {
         "format-alt": "[ {usage}%  ]",
@@ -78,20 +84,9 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default":  ["", ""]
         },
         "on-click-right": "pavucontrol"
-    },
-    "clock": {
-        // "timezone": "Asia/Manila",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "[ {:%b %d  %a  %H:%M} ]",
-	"format-alt": "[  ]"
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "[ {percent}% {icon} ]",
-        "format-icons": ["", ""]
     },
     "battery": {
         "states": {
@@ -109,6 +104,27 @@
     },
     "battery#bat2": {
         "bat": "BAT2"
+    },
+    "clock": {
+        // "timezone": "Asia/Manila",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "[ {:%b %d  %a  %H:%M} ]",
+	"format": "[  ]"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "[ {percent}% {icon} ]",
+        "format-icons": ["", ""]
     },
     "custom/media": {
         "format": "[ {icon} {} ]",

@@ -67,10 +67,10 @@ exec_always import-gsettings
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+ exec swayidle -w \
+          timeout 300 'swaylock -c -f --screenshots --clock --indicator --timestr "%H:%M:%S" --datestr "%b %d %A" --indicator-radius 85 --indicator-thickness 6 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color 81A2BE --key-hl-color FF6673 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.1' \
+          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -c -f --screenshots --clock --indicator --timestr "%H:%M:%S" --datestr "%b %d %A" --indicator-radius 85 --indicator-thickness 6 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color 81A2BE --key-hl-color FF6673 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.1'
 
 # Input configuration
 #
@@ -233,11 +233,13 @@ assign [app_id="org.qbittorrent.qBittorrent"] $ws3
 
 assign [class="obsidian"] $ws4
 assign [app_id="microsoft-office-online"] $ws4
-assign [app_id="com.github.babluboy.bookworm"] $ws4
 assign [app_id="org.gnome.Maps"] $ws4
 
 assign [app_id="Code"] $ws5
 assign [instance="github desktop"] $ws5
+assign [app_id="com.github.babluboy.bookworm"] $ws5
+assign [instance="mongodb-compass"] $ws5
+assign [instance="postman"] $ws5
 
 assign [app_id="mpv"] $ws6
 assign [app_id="droidcam"] $ws6
@@ -250,6 +252,8 @@ assign [class="heroic"] $ws6
 assign [class="Steam"] $ws6
 assign [class="net-runelite-client-RuneLite"] $ws6
 assign [class="net-runelite-launcher-Launcher"] $ws6
+assign [class="org-tlauncher-tlauncher-rmo-TLauncher"] $ws6
+assign [instance="Minecraft* 1.16"] $ws6
 
 assign [app_id="obs"] $ws7
 assign [app_id="krita"] $ws7
@@ -260,7 +264,8 @@ assign [app_id="tenacity"] $ws7
 assign [app_id="librecad"] $ws7
 
 assign [app_id="pavucontrol"] $ws9
-assign [instance="lxappearance"] $ws9
+assign [app_id="SoundWireServer"] $ws9
+assign [instance="nwg-look"] $ws9
 
 assign [class="Spotify"] $ws10
 
@@ -272,6 +277,8 @@ for_window [instance="brave-browser-nightly"] fullscreen
 for_window [app_id="thunar"] fullscreen
 for_window [class="obsidian"] fullscreen
 for_window [app_id="microsoft-office-online"] floating enable
+for_window [app_id="com.chatterino.https:\/\/www.chatterino"] floating enable
+for_window [app_id="SoundWireServer"] floating enable
 
 #
 # Layout stuff:
@@ -416,6 +423,9 @@ include /etc/sway/config.d/*
 
 exec mako
 
+# boot load by using scratchpad
+# or try shell scripting load order
+
 exec --no-startup-id
 {
 swaymsg "workspace $ws1; exec $term; exec $term -e syncthing -no-browser"
@@ -423,14 +433,13 @@ swaymsg "workspace $ws2; exec brave-nightly"
 swaymsg "workspace $ws3; exec thunar"
 swaymsg "workspace $ws4; exec obsidian"
 swaymsg "workspace $ws7; exec github-desktop"
+swaymsg "workspace $ws9; exec cpupower-gui" 
+swaymsg "exec $term -e btop"
+#swaymsg "move $term to workspace $ws1; move brave-nightly to workspace $ws2"
+#swaymsg "move thunar to workspace $ws3; move obsidian to workspace $ws4"
+#swaymsg "move github-desktop to worskpace $ws5; move cpupower-gui to workspace $ws9"
+#swaymsg "workspace $ws8"
+#swaymsg "exec $term; move $term to scratchpad"
+#swaymsg "exec leafpad; move leafpad to scratchpad"
+# swaymsg "exec $term -e keylogger; move alacritty to scratchpad"
 }
-
-#exec alacritty
-#exec alacritty -e syncthing -no-browser
-#exec brave-nightly
-#exec thunar
-#exec obsidian
-#exec github-desktop
-
-# Only opens next app when the previous app closes
-# exec_always 'alacritty; sleep 5; alacritty; sleep 5; thunar'

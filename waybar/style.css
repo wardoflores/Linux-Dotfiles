@@ -1,5 +1,8 @@
 * {
+    /*border-radius: 20px;*/
     font-family: "monospace", "Font Awesome 5 Free";
+    font-size: 12px;
+    font-weight: 500;
 }
 
 window .modules-left #workspaces {
@@ -7,17 +10,14 @@ window .modules-left #workspaces {
 }
 
 window#waybar {
-    font-weight: 500;
-    font-size: 12px;
+    color: mix(@theme_text_color, #C0C0C0, 0.25);
     background: shade(alpha(@borders, 0.9), 1.25);
     border-bottom: 1px solid alpha(@unfocused_borders, 0.85);
     /*background: linear-gradient(to top, shade(alpha(@borders, 0.95), 1.15), shade(alpha(@borders, 0.9), 1.25));*/
     /*border-bottom: 1px solid alpha(@borders, 0.95);*/
-    color: mix(@theme_text_color, #C0C0C0, 0.25);
 }
 
 window .modules-left #workspaces button {
-    font-size: 12px;
     box-shadow: none;
     min-height: 0;
     min-width: 50px;
@@ -29,7 +29,6 @@ window .modules-left #workspaces button {
     /*color: alpha(mix(@theme_text_color, #ffffff, 0.25), 0.35);*/
     /*color: mix(@theme_text_color, #C0C0C0, 0.25);*/
 }
-
 
 window .modules-left #workspaces button.focused:hover,
 window .modules-left #workspaces button.focused {
@@ -43,18 +42,50 @@ window .modules-left #workspaces button:hover  {
     color: mix(@theme_text_color, #C0C0C0, 0.25);
 }
 
-#network, #cpu, #memory, #temperature, #battery, #battery#bat2, #clock, #tray {
-    margin: 0;
-    padding: 0;
+#custom-word {
+    margin: 0px 0px 0px 0px;
+}
+
+#network {
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#temperature {
 }
 
 #pulseaudio {
     margin: 0px 0px 0px 0px;
-} 
-
-#custom-word {
-    margin: 0px 0px 0px 10px;
 }
+
+#battery {
+    margin: 0px 0px 0px 0px;
+}
+
+#battery.critical {
+     color: #e06c75;
+}
+
+#battery.full {
+    margin: 0px 0px 0px 0px;
+}
+
+#clock {
+    margin: 0px 0px 0px 0px;
+}
+
+#custom-weather, #custom-cast {
+    margin: 0px 20px 0px 0px;
+}
+
+#network, #cpu, #memory, #temperature, #battery, #battery#bat2, #clock, #tray {
+    margin: 0;
+    padding: 0;
+} 
 
 #idle_inhibitor.activated {
     margin: 0px 17px 0px 4px;
@@ -64,43 +95,10 @@ window .modules-left #workspaces button:hover  {
     /*color: alpha(mix(@theme_text_color, #ffffff, 0.25), 0.35);*/
 /*}*/
 
-#clock {
-    margin: 0px 0px 0px 0px;
-}
-
 #mode {
     color: #FFFFFF;
     margin: 0px 0px 0px 12px;
     padding: 0px 6px 0px 6px;
     background-color: @theme_selected_bg_color;
     box-shadow: inset 0 -1px mix(@theme_selected_bg_color, #808080, 0.25);
-}
-
-
-#battery {
-    margin: 0px 0px 0px 0px;
-}
-
-#memory {
-}
-
-#network {
-}
-
-#cpu {
-}
-
-#temperature {
-}
-
-#custom-weather, #custom-cast {
-    margin: 0px 20px 0px 0px;
-}
-
-#battery.critical {
-     color: #e06c75;
-}
-
-#battery.full {
-    margin: 0px 0px 0px 0px;
 }
