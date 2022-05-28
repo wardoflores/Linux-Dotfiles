@@ -6,6 +6,7 @@ sudo cp .zshrc /home/joey/coalemus/sway-dotfiles/zsh/
 
 cd /etc
 
+sudo cp environment /home/joey/coalemus/sway-dotfiles/
 sudo cp hosts /home/joey/coalemus/sway-dotfiles/
 
 cd ~/.config
