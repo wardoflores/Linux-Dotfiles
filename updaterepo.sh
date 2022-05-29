@@ -1,6 +1,6 @@
 # Copies config files into this repository file automatically.
 
-cd ~
+cd /home/joey
 
 sudo cp .zshrc /home/joey/coalemus/Sway-Dotfiles/zsh/
 
@@ -9,29 +9,29 @@ cd /etc
 sudo cp environment /home/joey/coalemus/Sway-Dotfiles/
 sudo cp hosts /home/joey/coalemus/Sway-Dotfiles/
 
-cd ~/.config
+cd /home/joey/.config
 
 sudo cp brave-flags.conf /home/joey/coalemus/Sway-Dotfiles/
 sudo cp electron-flags.conf /home/joey/coalemus/Sway-Dotfiles/
 
-cd ~/.config/sway
+cd /home/joey/.config/sway
 
 sudo cp config /home/joey/coalemus/Sway-Dotfiles/sway/
 
-cd ~/.config/alacritty
+cd /home/joey/.config/alacritty
 
 sudo cp alacritty.yml /home/joey/coalemus/Sway-Dotfiles/alacritty/
 
-cd ~/.config/wofi
+cd /home/joey/.config/wofi
 
 sudo cp config /home/joey/coalemus/Sway-Dotfiles/wofi/
 sudo cp style.css /home/joey/coalemus/Sway-Dotfiles/wofi/
 
-cd ~/.config/waybar
+cd /home/joey/.config/waybar
 
 sudo cp config /home/joey/coalemus/Sway-Dotfiles/waybar/
 sudo cp style.css /home/joey/coalemus/Sway-Dotfiles/waybar/
 
-cd ~/.config/mako
+cd /home/joey/.config/mako
 
 sudo cp config /home/joey/coalemus/Sway-Dotfiles/mako/
