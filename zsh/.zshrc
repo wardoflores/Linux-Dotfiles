@@ -1,6 +1,6 @@
-if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec sway
-fi
+#if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+#  exec sway
+#fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -116,18 +116,29 @@ alias btop="btop --utf-force"
 alias shizuku="adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
 alias sucode="sudo code --user-data-dir=~/root"
 
-alias confwm="sudo nano .config/sway/config"
+alias confsway="sudo nano .config/sway/config"
+alias confdwm="sudo nano dwm-6.3/config.def.h"
+alias makedwm="cp dw.config.def.h dwm/config.h | sudo make clean install"
+
 alias confbar="sudo nano .config/waybar/config"
 alias confbars="sudo nano .config/waybar/style.css"
-alias confterm="sudo nano .config/alacritty/alacritty.yml"
-alias confsh="sudo nano .zshrc"
-alias makesh="source .zshrc"
+
+alias confalacritty="sudo nano .config/alacritty/alacritty.yml"
+alias confst="sudo nano st-0.8.5/config.def.h"
+alias makest="cp st-0.8.5/config.def.h st-0.8.5/config.h | sudo make clean install"
+
 alias confmako="sudo nano .config/mako/config"
+
+alias confzsh="sudo nano .zshrc"
+alias makezsh="source .zshrc"
+
 alias confgrub="sudo nano /etc/default/grub"
 alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias pushdots="sudo /home/joey/coalemus/Sway-Dotfiles/updaterepo.sh"
-alias pulldots="sudo /home/joey/coalemus/Sway-Dotfiles/updateconfigs.sh"
-alias wipewofi="sudo /home/joey/coalemus/Sway-Dotfiles/wofifilter.sh"
+
+alias pushdots="sudo /home/joey/coalemus/Linux-Dotfiles/updaterepo.sh"
+alias pullwl="sudo /home/joey/coalemus/Linux-Dotfiles/updateconfigs.sh"
+alias pullx=""
+alias wipewofi="sudo /home/joey/coalemus/Linux-Dotfiles/wofifilter.sh"
 
 alias pyserver="/bin/python /home/joey/coalemus/Python-Projects/server/server.py"
 alias pipinstaller="/home/joey/coalemus/Terminal-Projects/linuxsh/pippackages.sh"

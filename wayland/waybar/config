@@ -23,7 +23,7 @@
     },
     "custom/word": {
 	"format-alt": "          •          ",
-        "format": "TASKS: Obsidian, Upwork, Wordpress, Data Science Notes, Room prep for moving out",
+        "format": "Complete Obsidian Notes: Data Science, Definitions | Pfor: Upwork | Wordpress Blog site | Prepare for Moving out",
 	"on-click-right": "alacritty -e sudo /bin/python /home/joey/coalemus/Python-Projects/shellupdate/updatebartui.py",
 	//"max-length": 40,
         //"exec": "grep --only-matching '^alias\\s\\w*' .zshrc",

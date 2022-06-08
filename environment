@@ -6,12 +6,12 @@
 # Restart Device to reapply, 
 # restarting window manager wont work.
 #GDK_BACKEND=x11 # crashes wayland tho Enable for improved Zoom screenshare performance
-QT_QPA_PLATFORM=wayland
+#QT_QPA_PLATFORM=wayland
 platform=wayland
 #QT_QPA_PLATFORM=xcb
 #QT_QPA_PLATFORMTHEME=qt5ct
 CLUTTER_BACKEND=wayland
-SDL_VIDEODRIVER=wayland
+#SDL_VIDEODRIVER=wayland
 WINIT_UNIX_BACKEND=x11
 _JAVA_AWT_WM_NONREPARENTING=1
 SWAY_CURSOR_THEME=Breeze_Default
