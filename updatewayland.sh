@@ -21,3 +21,8 @@ sudo cp /home/joey/coalemus/Linux-Dotfiles/wayland/waybar/style.css style.css
 cd /home/joey/.config/mako
 
 sudo cp /home/joey/coalemus/Linux-Dotfiles/wayland/mako/config config
+
+cd /home/joey/.config
+
+sudo cp /home/joey/coalemus/Linux-Dotfiles/wayland/brave-flags.conf brave-flags.conf
+sudo cp /home/joey/coalemus/Linux-Dotfiles/wayland/electron-flags.conf electron-flags.conf

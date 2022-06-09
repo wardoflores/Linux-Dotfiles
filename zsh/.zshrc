@@ -138,8 +138,9 @@ alias confgrub="sudo nano /etc/default/grub"
 alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 alias pushdots="sudo /home/joey/coalemus/Linux-Dotfiles/updaterepo.sh"
-alias pullwl="sudo /home/joey/coalemus/Linux-Dotfiles/updateconfigs.sh"
-alias pullx=""
+alias pullenv="sudo /home/joey/coalemus/Linux-Dotflies/updatelinux.sh"
+alias pullwl="sudo /home/joey/coalemus/Linux-Dotfiles/updatewayland.sh"
+alias pullx="sudo /home/joey/coalemus/Linux-Dotfiles/updatexorg.sh"
 alias wipewofi="sudo /home/joey/coalemus/Linux-Dotfiles/wofifilter.sh"
 
 alias pyserver="/bin/python /home/joey/coalemus/Python-Projects/server/server.py"
