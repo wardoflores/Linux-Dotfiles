@@ -116,21 +116,23 @@ alias btop="btop --utf-force"
 alias shizuku="adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
 alias sucode="sudo code --user-data-dir=~/root"
 
-alias confsway="sudo nano .config/sway/config"
-alias confdwm="sudo nano dwm-6.3/config.def.h"
-alias makedwm="cp dw.config.def.h dwm/config.h | sudo make clean install"
+alias confsway="sudo nano /home/joey/.config/sway/config"
+alias confdwm="sudo nano /home/joey/dwm-6.3/config.def.h"
+alias makedwm="sudo cp /home/joey/dwm-6.3/config.def.h /home/joey/dwm-6.3/config.h && cd dwm-6.3 && sudo make clean install && cd /home/joey/"
 
 alias confbar="sudo nano .config/waybar/config"
 alias confbars="sudo nano .config/waybar/style.css"
 
 alias confalacritty="sudo nano .config/alacritty/alacritty.yml"
 alias confst="sudo nano st-0.8.5/config.def.h"
-alias makest="cp st-0.8.5/config.def.h st-0.8.5/config.h | sudo make clean install"
+alias makest="sudo cp st-0.8.5/config.def.h st-0.8.5/config.h && cd st-0.8.5 && sudo make clean install"
 
 alias confmako="sudo nano .config/mako/config"
 
-alias confzsh="sudo nano .zshrc"
-alias makezsh="source .zshrc"
+alias confx="sudo nano /home/joey/.xinitrc"
+
+alias confzsh="sudo nano /home/joey/.zshrc"
+alias makezsh="source /home/joey/.zshrc"
 
 alias confgrub="sudo nano /etc/default/grub"
 alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"

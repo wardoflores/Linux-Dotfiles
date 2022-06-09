@@ -42,6 +42,10 @@ sudo cp config /home/joey/coalemus/Linux-Dotfiles/wayland/mako/
 
 # Xorg system
 
+sudo cp /home/joey/.xinitrc /home/joey/coalemus/Linux-Dotfiles/xorg
+
 cd /home/joey/dwm-6.3/
 
 sudo cp config.def.h /home/joey/coalemus/Linux-Dotfiles/xorg/dwm/
+
+

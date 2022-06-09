@@ -237,7 +237,7 @@ assign [app_id="org.gnome.Maps"] $ws4
 
 assign [app_id="Code"] $ws5
 assign [instance="github desktop"] $ws5
-assign [app_id="com.github.babluboy.bookworm"] $ws5
+assign [app_id="Calibre"] $ws5
 assign [instance="mongodb-compass"] $ws5
 assign [instance="postman"] $ws5
 
