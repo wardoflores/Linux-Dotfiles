@@ -1,7 +1,9 @@
 # Copies Xorg config files into the Xorg system config directories automatically.
 
+sudo cp /home/joey/coalemus/Linux-Dotfiles/xorg/.xinitrc /home/joey/
+sudo cp /home/joey/coalemus/Linux-Dotfiles/xorg/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
 cd /home/joey/dwm-6.3/
 
-cp /home/joey/coalemus/Linux-Dotfiles/xorg/dwm/config.def.h config.def.h
+sudo cp /home/joey/coalemus/Linux-Dotfiles/xorg/dwm/config.def.h config.def.h
 
