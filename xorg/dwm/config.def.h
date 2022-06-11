@@ -12,8 +12,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const int user_bh            = 20;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "Cascadia Code:size=10", "Font Awesome 5 Solid:size=10", "monospace:size=10" };
-static const char dmenufont[]       = { "Font Awesome 5 Solid:size=10" };
+static const char *fonts[]          = { "Cascadia Code:size=10", "FontAwesome:pixelsize=13:antialias=true:autohint=true", "monospace:size=10" };
+static const char dmenufont[]       = { "FontAwesome:pixelsize=13:antialias=true:autohint=true" };
 static const char col_bg[]          = "#0B0D17";
 static const char col_bl[]          = "#171B2E";
 static const char col_fg[]          = "#c5d1eb";
@@ -26,7 +26,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "[1:  ]", "[2:  ]", "[3:  ]", "[4:  ]", "[5:  ]", "[6:  ]", "[7:  ]", "[8:  ]", "[9:  ]" };
+static const char *tags[] = { " ", "", "", " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):

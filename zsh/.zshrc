@@ -109,25 +109,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias aliaslist="grep --only-matching '^alias\s\w*' .zshrc" 
 alias c="clear"
-alias home="cd ~"
-alias btop="btop --utf-force"
-alias shizuku="adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
-alias sucode="sudo code --user-data-dir=~/root"
+alias myalias="grep --only-matching '^alias\s\w*' .zshrc | less" 
 
-alias confsway="sudo nano /home/joey/.config/sway/config"
-alias confdwm="sudo nano /home/joey/dwm-6.3/config.def.h"
-alias makedwm="sudo cp /home/joey/dwm-6.3/config.def.h /home/joey/dwm-6.3/config.h && cd dwm-6.3 && sudo make clean install && cd /home/joey/"
+# Dotfile automations
 
-alias confbar="sudo nano .config/waybar/config"
-alias confbars="sudo nano .config/waybar/style.css"
+alias pushdots="sudo /home/joey/coalemus/Linux-Dotfiles/updaterepo.sh"
+alias pullenv="sudo /home/joey/coalemus/Linux-Dotfiles/updatelinux.sh && makezsh"
+alias pullwl="sudo /home/joey/coalemus/Linux-Dotfiles/updatewayland.sh"
+alias pullx="sudo /home/joey/coalemus/Linux-Dotfiles/updatexorg.sh"
 
-alias confalacritty="sudo nano .config/alacritty/alacritty.yml"
-alias confst="sudo nano st-0.8.5/config.def.h"
-alias makest="sudo cp st-0.8.5/config.def.h st-0.8.5/config.h && cd st-0.8.5 && sudo make clean install"
+# Update automation
 
-alias confmako="sudo nano .config/mako/config"
+alias makepy="/home/joey/coalemus/Linux-Dotfiles/updatepython.sh"
+
+# System configs
 
 alias confx="sudo nano /home/joey/.xinitrc"
 
@@ -137,17 +133,42 @@ alias makezsh="source /home/joey/.zshrc"
 alias confgrub="sudo nano /etc/default/grub"
 alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-alias pushdots="sudo /home/joey/coalemus/Linux-Dotfiles/updaterepo.sh"
-alias pullenv="sudo /home/joey/coalemus/Linux-Dotflies/updatelinux.sh"
-alias pullwl="sudo /home/joey/coalemus/Linux-Dotfiles/updatewayland.sh"
-alias pullx="sudo /home/joey/coalemus/Linux-Dotfiles/updatexorg.sh"
+# Window manager configs
+
+alias confsway="sudo nano /home/joey/.config/sway/config"
+alias confdwm="sudo nano /home/joey/dwm-6.3/config.def.h"
+alias makedwm="sudo cp /home/joey/dwm-6.3/config.def.h /home/joey/dwm-6.3/config.h && cd dwm-6.3 && sudo make clean install && cd /home/joey/"
+
+# Application configs
+
+alias confalacritty="sudo nano .config/alacritty/alacritty.yml"
+alias confst="sudo nano st-0.8.5/config.def.h"
+alias makest="sudo cp st-0.8.5/config.def.h st-0.8.5/config.h && cd st-0.8.5 && sudo make clean install"
+
+alias confmako="sudo nano .config/mako/config"
+
+alias confwbar="sudo nano .config/waybar/config"
+alias confwbars="sudo nano .config/waybar/style.css"
+alias barupdate="sudo /bin/python /home/joey/coalemus/Python-Projects/shellupdate/updatebartui.py"
+
 alias wipewofi="sudo /home/joey/coalemus/Linux-Dotfiles/wofifilter.sh"
 
+alias btop="btop --utf-force"
+
+alias shizuku="adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
+alias sucode="sudo code --user-data-dir=~/root"
+
+# Server automation
+
 alias pyserver="/bin/python /home/joey/coalemus/Python-Projects/server/server.py"
-alias pipinstaller="/home/joey/coalemus/Terminal-Projects/linuxsh/pippackages.sh"
-alias barupdate="sudo /bin/python /home/joey/coalemus/Python-Projects/shellupdate/updatebartui.py"
+
+# Python Scripts
+
 alias calctui="/bin/python /home/joey/coalemus/Python-Projects/calculator/calctui.py"
 alias calcgui="/bin/python /home/joey/coalemus/Python-Projects/calculator/calcgui.py"
+
+# Autoinput scripts
+
 alias autoclick="/bin/python /home/joey/coalemus/Python-Projects/cursor/autoclick.py"
 alias afkpress="/bin/python /home/joey/coalemus/Python-Projects/cursor/afkpress.py"
 alias afkmove="/bin/python /home/joey/coalemus/Python-Projects/cursor/afkmove.py"
@@ -155,25 +176,40 @@ alias idlescroll="/bin/python /home/joey/coalemus/Python-Projects/cursor/afkscro
 alias typespam="/bin/python /home/joey/coalemus/Python-Projects/spambot/typespam.py"
 alias filespam="/bin/python /home/joey/coalemus/Python-Projects/spambot/filespam.py"
 alias keylogger="/bin/python /home/joey/coalemus/Python-Projects/keylogger/keylogger.py"
+
+# 
+
 alias birthday="/bin/python /home/joey/coalemus/Python-Projects/birthdaywisher/happybirthday.py"
 alias meditate="/bin/python /home/joey/coalemus/Python-Projects/meditation/meditate.py"
-alias netspeed="/bin/python /home/joey/coalemus/Python-Projects/internetspeed/speedprinter.py"
-alias wolfram="/bin/python /home/joey/coalemus/Python-Projects/wolramalpha/apicaller.py"
+
+# Python API scripts
+
 alias voassist="/bin/python /home/joey/coalemus/Python-Projects/voiceassistant/voasst.py"
 alias votyper="/bin/python /home/joey/coalemus/Python-Projects/voiceassistant/voicetyper.py"
 alias tts="/bin/python /home/joey/coalemus/Python-Projects/voiceassistant/TTS.py"
-
 alias meetcli="/home/joey/coalemus/Python-Projects/selenium/meetcli.sh"
 alias meetgui="/home/joey/coalemus/Python-Projects/selenium/meetgui.sh"
+
+# Python Bot API Scripts
+
+alias netspeed="/bin/python /home/joey/coalemus/Python-Projects/internetspeed/speedprinter.py"
+alias wolfram="/bin/python /home/joey/coalemus/Python-Projects/wolramalpha/apicaller.py"
+
+# Python Social bot API Scripts
+
 alias twitterbot="/home/joey/coalemus/Python-Twitter-Bot/twitterbot.sh"
 alias redditbot="/home/joey/coalemus/Python-Reddit-Bot/redditbot.sh"
 alias discordbot="/home/joey/coalemus/Python-Discord-bot/discordbot.sh"
 
+# ADB 
+
 alias adbcheck="/home/joey/coalemus/Android-Projects/adbcheck.sh"
 alias adbrestart="/home/joey/coalemus/Android-Projects/adbrestart.sh"
+
+# Scrcpy
+
 alias scrcpystart="/home/joey/coalemus/Android-Projects/scrcpystart.sh"
 alias scrcpyrec="/home/joey/coalemus/Android-Projects/scrcpyrec.sh"
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

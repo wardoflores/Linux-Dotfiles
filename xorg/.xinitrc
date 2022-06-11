@@ -60,9 +60,9 @@ dwmstatus 2>&1 >/dev/null &
 
 xrandr --output eDP-1 --mode 1366x768 &
 
-# Compositor
+# redshift
 
-# {none yet.)
+exec redshift -l 7.0645451:125.6084371 &
 
 # Loop
 
