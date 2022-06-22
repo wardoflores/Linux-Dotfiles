@@ -112,6 +112,7 @@ source $ZSH/oh-my-zsh.sh
 alias c="clear"
 alias myalias="grep --only-matching '^alias\s\w*' .zshrc | less" 
 alias fonts="fc-list | cut -f2 -d: | sort -u | less -r"
+alias xprop="/home/joey/xpropawk.sh"
 
 # Dotfile automations
 
