@@ -3,17 +3,14 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const int user_bh            = 20;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "Cascadia Code:size=10", "FontAwesome:pixelsize=13:antialias=true:autohint=true", "monospace:size=10" };
-static const char dmenufont[]       = { "FontAwesome:pixelsize=13:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Cascadia Code:size=11", "FontAwesome:pixelsize=11:antialias=true:autohint=true", "monospace:size=11" };
+static const char dmenufont[]       = { "FontAwesome:pixelsize=12:antialias=true:autohint=true" };
 static const char col_bg[]          = "#0B0D17";
 static const char col_bl[]          = "#171B2E";
 static const char col_fg[]          = "#c5d1eb";
@@ -26,7 +23,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", "", "", " ", " ", " ", " ", " ", " " };
+static const char *tags[] = { " ", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -41,6 +38,7 @@ static const Rule rules[] = {
 	{ "fsearch",				NULL,		NULL,	1 << 2,		0,		-1 },
 	{ "org.qbittorrent.qBittorrent",	NULL,		NULL,	1 << 2,		0,		-1 },
 	{ "obsidian",				NULL,		NULL,	1 << 3,		0,		-1 },
+	{ "anki",				"Anki",		NULL,	1 << 3,		0,		-1 },
 	{ "microsoft-office-online",		NULL,		NULL,	1 << 3,		0,		-1 },
 	{ "org.gnome.Maps",			NULL,		NULL,	1 << 3,		0,		-1 },
 	{ "code",				NULL,		NULL,	1 << 4,		0,		-1 },
@@ -102,11 +100,22 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_cn, "-sf", col_wh, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+
+static const char *screenshot[] = { "maim", "~/Pictures/$(date +%s).png", "-u", NULL };
+static const char *screenshotsel[] = { "maim", "-s", "-u", "|", "xclip", "-selection", "clipboard", "-t", "image/png", "-i", NULL };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+
+	{ MODKEY,			XK_Print,	spawn,	{.v = screenshot } },
+	{ MODKEY|ShiftMask,		XK_Print,	spawn,		{.v = screenshotsel } },
+
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

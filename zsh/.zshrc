@@ -154,6 +154,7 @@ alias barupdate="sudo /bin/python /home/joey/coalemus/Python-Projects/shellupdat
 alias wipewofi="sudo /home/joey/coalemus/Linux-Dotfiles/wofifilter.sh"
 
 alias btop="btop --utf-force"
+alias upwork="/opt/Upwork/upwork"
 
 alias shizuku="adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
 alias sucode="sudo code --user-data-dir=~/root"
