@@ -7,3 +7,6 @@ cd /home/joey/dwm-6.3/
 
 sudo cp /home/joey/coalemus/Linux-Dotfiles/xorg/dwm/config.def.h config.def.h
 
+cd /home/joey/dwmstatus/
+
+sudo cp /home/joey/coalemus/Linux-Dotfiles/xorg/dwmstatus/ dwmstatus.c

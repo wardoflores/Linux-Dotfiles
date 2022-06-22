@@ -20,6 +20,7 @@
 char *tzargentina = "America/Buenos_Aires";
 char *tzutc = "UTC";
 char *tzberlin = "Europe/Berlin";
+char *tzmanila = "Asia/Manila";
 
 static Display *dpy;
 
@@ -185,6 +186,7 @@ main(void)
 	char *tmar;
 	char *tmutc;
 	char *tmbln;
+	char *tmphil;
 	char *t0, *t1, *t2;
 
 	if (!(dpy = XOpenDisplay(NULL))) {
@@ -202,10 +204,9 @@ main(void)
 		t0 = gettemperature("/sys/devices/virtual/hwmon/hwmon0", "temp1_input");
 		t1 = gettemperature("/sys/devices/virtual/hwmon/hwmon2", "temp1_input");
 		t2 = gettemperature("/sys/devices/virtual/hwmon/hwmon4", "temp1_input");
+		tmphil = mktimes("%b %d  %a  %H:%M", tzmanila);
 
-		status = smprintf("T:%s|%s|%s L:%s B:%s|%s A:%s U:%s %s",
-				t0, t1, t2, avgs, bat, bat1, tmar, tmutc,
-				tmbln);
+		status = smprintf("%s", tmphil);
 		setstatus(status);
 
 		free(t0);
@@ -217,6 +218,7 @@ main(void)
 		free(tmar);
 		free(tmutc);
 		free(tmbln);
+		free(tmphil);
 		free(status);
 	}
 

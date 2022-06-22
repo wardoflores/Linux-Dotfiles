@@ -29,6 +29,7 @@ TODO: Add descriptions.
 - `.xinitrc`
 - `50-mouse-acceleration.conf`
 - `dwm/config.def.h`
+- `dwmstatus/dwmstatus.c`
 
 ## Shell Scripts
 
