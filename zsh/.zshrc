@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
 alias myalias="grep --only-matching '^alias\s\w*' .zshrc | less" 
+alias fonts="fc-list | cut -f2 -d: | sort -u | less -r"
 
 # Dotfile automations
 

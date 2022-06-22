@@ -9,8 +9,14 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const int user_bh            = 20;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "Cascadia Code:size=11", "FontAwesome:pixelsize=11:antialias=true:autohint=true", "monospace:size=11" };
-static const char dmenufont[]       = { "FontAwesome:pixelsize=12:antialias=true:autohint=true" };
+static const char *fonts[]          = { 
+					"Source Code Pro:size=10",
+					"Font Awesome 6 Free,Font Awesome 6 Free Solid:pixelsize=9:antialias=true:autohint=true",
+					"Font Awesome 6 Free,Font Awesome 6 Free Regular:pixelsize=1:antialias=true:autohint=true",
+					"Font Awesome 6 Brands,Font Awesome 6 Brands Regular:pixelsize=9:antialias=true:autohint=true",
+					"Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:pixelsize=1:antialias=true:autohint=true" 
+					};
+static const char dmenufont[]       = { "Source Code Pro:size=10" };
 static const char col_bg[]          = "#0B0D17";
 static const char col_bl[]          = "#171B2E";
 static const char col_fg[]          = "#c5d1eb";
@@ -31,13 +37,13 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class				instance	title	tags-mask	isfloating	monitor */
-	{ "st",					NULL,		NULL,	0,		1,		-1 },
-	{ "brave-browser-nightly",  		NULL,		NULL,	1 << 0,		0,		-1 },
+	{ "st-256color",			"st-256color",	NULL,	0,		1,		-1 },
+	{ "Brave-browser-nightly",  		"brave-browser-nightly",	NULL,		1 << 0,		0,		-1 },
 	{ "Google-chrome",			NULL,		NULL,	1 << 0,		0,		-1 },
-	{ "thunar",				NULL,		NULL,	1 << 2,		0,		-1 },
+	{ "Thunar",				"thunar",	NULL,	1 << 2,		0,		-1 },
 	{ "fsearch",				NULL,		NULL,	1 << 2,		0,		-1 },
 	{ "org.qbittorrent.qBittorrent",	NULL,		NULL,	1 << 2,		0,		-1 },
-	{ "obsidian",				NULL,		NULL,	1 << 3,		0,		-1 },
+	{ "obsidian",				"obsidian",	NULL,	1 << 3,		0,		-1 },
 	{ "anki",				"Anki",		NULL,	1 << 3,		0,		-1 },
 	{ "microsoft-office-online",		NULL,		NULL,	1 << 3,		0,		-1 },
 	{ "org.gnome.Maps",			NULL,		NULL,	1 << 3,		0,		-1 },
