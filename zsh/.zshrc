@@ -116,14 +116,14 @@ alias xprop="/home/joey/xpropawk.sh"
 
 # Dotfile automations
 
-alias pushdots="sudo /home/joey/coalemus/Linux-Dotfiles/updaterepo.sh"
-alias pullenv="sudo /home/joey/coalemus/Linux-Dotfiles/updatelinux.sh && makezsh"
-alias pullwl="sudo /home/joey/coalemus/Linux-Dotfiles/updatewayland.sh"
-alias pullx="sudo /home/joey/coalemus/Linux-Dotfiles/updatexorg.sh"
+alias pushdots="sudo /home/joey/wardoflores/Linux-Dotfiles/updaterepo.sh"
+alias pullenv="sudo /home/joey/wardoflores/Linux-Dotfiles/updatelinux.sh && makezsh"
+alias pullwl="sudo /home/joey/wardoflores/Linux-Dotfiles/updatewayland.sh"
+alias pullx="sudo /home/joey/wardoflores/Linux-Dotfiles/updatexorg.sh"
 
 # Update automation
 
-alias makepy="/home/joey/coalemus/Linux-Dotfiles/updatepython.sh"
+alias makepy="/home/joey/wardoflores/Linux-Dotfiles/updatepython.sh"
 
 # System configs
 
@@ -151,9 +151,9 @@ alias confmako="sudo nano .config/mako/config"
 
 alias confwbar="sudo nano .config/waybar/config"
 alias confwbars="sudo nano .config/waybar/style.css"
-alias barupdate="sudo /bin/python /home/joey/coalemus/Python-Projects/shellupdate/updatebartui.py"
+alias barupdate="sudo /bin/python /home/joey/wardoflores/Python-Projects/shellupdate/updatebartui.py"
 
-alias wipewofi="sudo /home/joey/coalemus/Linux-Dotfiles/wofifilter.sh"
+alias wipewofi="sudo /home/joey/wardoflores/Linux-Dotfiles/wofifilter.sh"
 
 alias btop="btop --utf-force"
 alias upwork="/opt/Upwork/upwork"
@@ -163,56 +163,56 @@ alias sucode="sudo code --user-data-dir=~/root"
 
 # Server automation
 
-alias pyserver="/bin/python /home/joey/coalemus/Python-Projects/server/server.py"
+alias pyserver="/bin/python /home/joey/wardoflores/Python-Projects/server/server.py"
 
 # Python Scripts
 
-alias calctui="/bin/python /home/joey/coalemus/Python-Projects/calculator/calctui.py"
-alias calcgui="/bin/python /home/joey/coalemus/Python-Projects/calculator/calcgui.py"
+alias calctui="/bin/python /home/joey/wardoflores/Python-Projects/calculator/calctui.py"
+alias calcgui="/bin/python /home/joey/wardoflores/Python-Projects/calculator/calcgui.py"
 
 # Autoinput scripts
 
-alias autoclick="/bin/python /home/joey/coalemus/Python-Projects/cursor/autoclick.py"
-alias afkpress="/bin/python /home/joey/coalemus/Python-Projects/cursor/afkpress.py"
-alias afkmove="/bin/python /home/joey/coalemus/Python-Projects/cursor/afkmove.py"
-alias idlescroll="/bin/python /home/joey/coalemus/Python-Projects/cursor/afkscroll.py"
-alias typespam="/bin/python /home/joey/coalemus/Python-Projects/spambot/typespam.py"
-alias filespam="/bin/python /home/joey/coalemus/Python-Projects/spambot/filespam.py"
-alias keylogger="/bin/python /home/joey/coalemus/Python-Projects/keylogger/keylogger.py"
+alias autoclick="/bin/python /home/joey/wardoflores/Python-Projects/cursor/autoclick.py"
+alias afkpress="/bin/python /home/joey/wardoflores/Python-Projects/cursor/afkpress.py"
+alias afkmove="/bin/python /home/joey/wardoflores/Python-Projects/cursor/afkmove.py"
+alias idlescroll="/bin/python /home/joey/wardoflores/Python-Projects/cursor/afkscroll.py"
+alias typespam="/bin/python /home/joey/wardoflores/Python-Projects/spambot/typespam.py"
+alias filespam="/bin/python /home/joey/wardoflores/Python-Projects/spambot/filespam.py"
+alias keylogger="/bin/python /home/joey/wardoflores/Python-Projects/keylogger/keylogger.py"
 
 # 
 
-alias birthday="/bin/python /home/joey/coalemus/Python-Projects/birthdaywisher/happybirthday.py"
-alias meditate="/bin/python /home/joey/coalemus/Python-Projects/meditation/meditate.py"
+alias birthday="/bin/python /home/joey/wardoflores/Python-Projects/birthdaywisher/happybirthday.py"
+alias meditate="/bin/python /home/joey/wardoflores/Python-Projects/meditation/meditate.py"
 
 # Python API scripts
 
-alias voassist="/bin/python /home/joey/coalemus/Python-Projects/voiceassistant/voasst.py"
-alias votyper="/bin/python /home/joey/coalemus/Python-Projects/voiceassistant/voicetyper.py"
-alias tts="/bin/python /home/joey/coalemus/Python-Projects/voiceassistant/TTS.py"
-alias meetcli="/home/joey/coalemus/Python-Projects/selenium/meetcli.sh"
-alias meetgui="/home/joey/coalemus/Python-Projects/selenium/meetgui.sh"
+alias voassist="/bin/python /home/joey/wardoflores/Python-Projects/voiceassistant/voasst.py"
+alias votyper="/bin/python /home/joey/wardoflores/Python-Projects/voiceassistant/voicetyper.py"
+alias tts="/bin/python /home/joey/wardoflores/Python-Projects/voiceassistant/TTS.py"
+alias meetcli="/home/joey/wardoflores/Python-Projects/selenium/meetcli.sh"
+alias meetgui="/home/joey/wardoflores/Python-Projects/selenium/meetgui.sh"
 
 # Python Bot API Scripts
 
-alias netspeed="/bin/python /home/joey/coalemus/Python-Projects/internetspeed/speedprinter.py"
-alias wolfram="/bin/python /home/joey/coalemus/Python-Projects/wolramalpha/apicaller.py"
+alias netspeed="/bin/python /home/joey/wardoflores/Python-Projects/internetspeed/speedprinter.py"
+alias wolfram="/bin/python /home/joey/wardoflores/Python-Projects/wolramalpha/apicaller.py"
 
 # Python Social bot API Scripts
 
-alias twitterbot="/home/joey/coalemus/Python-Twitter-Bot/twitterbot.sh"
-alias redditbot="/home/joey/coalemus/Python-Reddit-Bot/redditbot.sh"
-alias discordbot="/home/joey/coalemus/Python-Discord-bot/discordbot.sh"
+alias twitterbot="/home/joey/wardoflores/Python-Twitter-Bot/twitterbot.sh"
+alias redditbot="/home/joey/wardoflores/Python-Reddit-Bot/redditbot.sh"
+alias discordbot="/home/joey/wardoflores/Python-Discord-bot/discordbot.sh"
 
 # ADB 
 
-alias adbcheck="/home/joey/coalemus/Android-Projects/adbcheck.sh"
-alias adbrestart="/home/joey/coalemus/Android-Projects/adbrestart.sh"
+alias adbcheck="/home/joey/wardoflores/Android-Projects/adbcheck.sh"
+alias adbrestart="/home/joey/wardoflores/Android-Projects/adbrestart.sh"
 
 # Scrcpy
 
-alias scrcpystart="/home/joey/coalemus/Android-Projects/scrcpystart.sh"
-alias scrcpyrec="/home/joey/coalemus/Android-Projects/scrcpyrec.sh"
+alias scrcpystart="/home/joey/wardoflores/Android-Projects/scrcpystart.sh"
+alias scrcpyrec="/home/joey/wardoflores/Android-Projects/scrcpyrec.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

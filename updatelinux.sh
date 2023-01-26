@@ -2,9 +2,9 @@
 
 cd /home/joey
 
-sudo cp /home/joey/coalemus/Linux-Dotfiles/zsh/.zshrc .zshrc
+sudo cp /home/joey/wardoflores/Linux-Dotfiles/zsh/.zshrc .zshrc
 
 cd /etc
 
-sudo cp /home/joey/coalemus/Linux-Dotfiles/environment environment
-sudo cp /home/joey/coalemus/Linux-Dotfiles/hosts hosts
+sudo cp /home/joey/wardoflores/Linux-Dotfiles/environment environment
+sudo cp /home/joey/wardoflores/Linux-Dotfiles/hosts hosts
