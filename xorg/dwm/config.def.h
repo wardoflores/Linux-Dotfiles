@@ -18,8 +18,8 @@ static const char *fonts[]          = {
 					};
 static const char dmenufont[]       = { "Source Code Pro:size=10" };
 static const char col_bg[]          = "#263238"; /* background */
-static const char col_bl[]          = "#80deea"; /* border lines */
-static const char col_fg[]          = "#6745c2"; /* text */
+static const char col_bl[]          = "#263238"; /* border lines */
+static const char col_fg[]          = "#9C27B0"; /* text */
 static const char col_wh[]          = "#000a12"; /* I dont know */
 static const char col_cn[]          = "#ffeb3b"; /* Text and Highlight */
 static const char *colors[][3]      = {
