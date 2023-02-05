@@ -72,12 +72,4 @@ done
 
 # Window Manager
 
-exec dwm
-
-# Autostart desktop applications
-
-exec brave-browser-nightly
-exec st -e syncthing -no-browser
-exec obsidian
-exec thunar
-exec github-desktop
+brave-browser-nightly; thunar; obsidian; github-desktop; exec dwm

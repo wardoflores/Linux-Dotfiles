@@ -8,7 +8,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int gappx     = 5;        /* gaps between windows */
-static const int user_bh            = 20;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const int user_bh            = 15;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { 
 					"Source Code Pro:size=10",
 					"Font Awesome 6 Free,Font Awesome 6 Free Solid:pixelsize=9:antialias=true:autohint=true",
@@ -17,11 +17,11 @@ static const char *fonts[]          = {
 					"Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:pixelsize=1:antialias=true:autohint=true" 
 					};
 static const char dmenufont[]       = { "Source Code Pro:size=10" };
-static const char col_bg[]          = "#0B0D17";
-static const char col_bl[]          = "#171B2E";
-static const char col_fg[]          = "#c5d1eb";
-static const char col_wh[]          = "#eeeeee";
-static const char col_cn[]          = "#198388";
+static const char col_bg[]          = "#263238"; /* background */
+static const char col_bl[]          = "#80deea"; /* border lines */
+static const char col_fg[]          = "#6745c2"; /* text */
+static const char col_wh[]          = "#000a12"; /* I dont know */
+static const char col_cn[]          = "#ffeb3b"; /* Text and Highlight */
 static const char *colors[][3]      = {
 	/*               fg         bg   border   */
 	[SchemeNorm] = { col_fg, col_bg, col_bl  },
@@ -38,17 +38,17 @@ static const Rule rules[] = {
 	 */
 	/* class				instance	title	tags-mask	isfloating	monitor */
 	{ "st-256color",			"st-256color",	NULL,	0,		1,		-1 },
-	{ "Brave-browser-nightly",  		"brave-browser-nightly",	NULL,		1 << 0,		0,		-1 },
-	{ "Google-chrome",			NULL,		NULL,	1 << 0,		0,		-1 },
+	{ "Brave-browser-nightly",  		"brave-browser-nightly",	NULL,		1 << 1,		0,		-1 },
+	{ "Google-chrome",			NULL,		NULL,	2,		0,		-1 },
 	{ "Thunar",				"thunar",	NULL,	1 << 2,		0,		-1 },
 	{ "fsearch",				NULL,		NULL,	1 << 2,		0,		-1 },
 	{ "org.qbittorrent.qBittorrent",	NULL,		NULL,	1 << 2,		0,		-1 },
-	{ "obsidian",				"obsidian",	NULL,	1 << 3,		0,		-1 },
+	{ NULL,					"obsidian",	NULL,	1 << (4 - 1),		0,		-1 },
 	{ "anki",				"Anki",		NULL,	1 << 3,		0,		-1 },
 	{ "microsoft-office-online",		NULL,		NULL,	1 << 3,		0,		-1 },
 	{ "org.gnome.Maps",			NULL,		NULL,	1 << 3,		0,		-1 },
 	{ "code",				NULL,		NULL,	1 << 4,		0,		-1 },
-	{ "github desktop",			NULL,		NULL,	1 << 4,		0,		-1 },
+	{ "GitHub Desktop",			"github desktop",NULL,	1 << 4,		0,		-1 },
 	{ "Calibre",				NULL,		NULL,	1 << 4,		0,		-1 },
 	{ "mongodb-compass",			NULL,		NULL,	1 << 4,		0,		-1 },
 	{ "postman",				NULL,		NULL,	1 << 4,		0,		-1 },
@@ -110,7 +110,7 @@ static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%"
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
-static const char *screenshot[] = { "maim", "~/Pictures/$(date +%s).png", "-u", NULL };
+static const char *screenshot[] = { "flameshot", "gui", NULL };
 static const char *screenshotsel[] = { "maim", "-s", "-u", "|", "xclip", "-selection", "clipboard", "-t", "image/png", "-i", NULL };
 
 static Key keys[] = {
