@@ -4,6 +4,11 @@ cd /home/joey
 
 sudo cp /home/joey/wardoflores/Linux-Dotfiles/zsh/.zshrc .zshrc
 
+cd /home/joey/.config/nvim/
+
+sudo cp /home/joey/.config/nvim/init.vim init.vim
+
+
 cd /etc
 
 sudo cp /home/joey/wardoflores/Linux-Dotfiles/environment environment

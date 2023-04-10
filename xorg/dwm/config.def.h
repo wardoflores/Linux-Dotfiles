@@ -3,23 +3,23 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const int user_bh            = 15;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { 
-					"Source Code Pro:size=10",
+					"DejaVu Sans:size=10",
 					"Font Awesome 6 Free,Font Awesome 6 Free Solid:pixelsize=9:antialias=true:autohint=true",
 					"Font Awesome 6 Free,Font Awesome 6 Free Regular:pixelsize=1:antialias=true:autohint=true",
 					"Font Awesome 6 Brands,Font Awesome 6 Brands Regular:pixelsize=9:antialias=true:autohint=true",
 					"Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:pixelsize=1:antialias=true:autohint=true" 
 					};
-static const char dmenufont[]       = { "Source Code Pro:size=10" };
-static const char col_bg[]          = "#263238"; /* background */
-static const char col_bl[]          = "#263238"; /* border lines */
-static const char col_fg[]          = "#9C27B0"; /* text */
+static const char dmenufont[]       = { "DejaVu Sans Mono:size=10" };
+static const char col_bg[]          = "#202020"; /* background */
+static const char col_bl[]          = "#ff9800"; /* border lines */
+static const char col_fg[]          = "#00e676"; /* text */
 static const char col_wh[]          = "#000a12"; /* I dont know */
 static const char col_cn[]          = "#ffeb3b"; /* Text and Highlight */
 static const char *colors[][3]      = {
@@ -29,7 +29,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { " ", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -39,7 +39,7 @@ static const Rule rules[] = {
 	/* class				instance	title	tags-mask	isfloating	monitor */
 	{ "st-256color",			"st-256color",	NULL,	0,		1,		-1 },
 	{ "Brave-browser-nightly",  		"brave-browser-nightly",	NULL,		1 << 1,		0,		-1 },
-	{ "Google-chrome",			NULL,		NULL,	2,		0,		-1 },
+	{ "Google-chrome",			NULL,		NULL,	1 << 4,		0,		-1 },
 	{ "Thunar",				"thunar",	NULL,	1 << 2,		0,		-1 },
 	{ "fsearch",				NULL,		NULL,	1 << 2,		0,		-1 },
 	{ "org.qbittorrent.qBittorrent",	NULL,		NULL,	1 << 2,		0,		-1 },

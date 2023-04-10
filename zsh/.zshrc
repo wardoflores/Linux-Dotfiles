@@ -113,6 +113,7 @@ alias c="clear"
 alias myalias="grep --only-matching '^alias\s\w*' .zshrc | less" 
 alias fonts="fc-list | cut -f2 -d: | sort -u | less -r"
 alias xprop="/home/joey/xpropawk.sh"
+alias nvim="sudo -Es nvim"
 
 # Dotfile automations
 
@@ -127,30 +128,30 @@ alias makepy="/home/joey/wardoflores/Linux-Dotfiles/updatepython.sh"
 
 # System configs
 
-alias confx="sudo nano /home/joey/.xinitrc"
+alias confx="sudo -Es nvim /home/joey/.xinitrc"
 
-alias confzsh="sudo nano /home/joey/.zshrc"
+alias confzsh="sudo -Es nvim /home/joey/.zshrc"
 alias makezsh="source /home/joey/.zshrc"
 
-alias confgrub="sudo nano /etc/default/grub"
+alias confgrub="sudo -Es nvim /etc/default/grub"
 alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # Window manager configs
 
-alias confsway="sudo nano /home/joey/.config/sway/config"
-alias confdwm="sudo nano /home/joey/dwm-6.3/config.def.h"
+alias confsway="sudo -Es nvim /home/joey/.config/sway/config"
+alias confdwm="sudo -Es nvim /home/joey/dwm-6.3/config.def.h"
 alias makedwm="sudo cp /home/joey/dwm-6.3/config.def.h /home/joey/dwm-6.3/config.h && cd dwm-6.3 && sudo make clean install && cd /home/joey/"
 
 # Application configs
 
-alias confalacritty="sudo nano .config/alacritty/alacritty.yml"
-alias confst="sudo nano st-0.8.5/config.def.h"
+alias confalacritty="sudo -Es nvim .config/alacritty/alacritty.yml"
+alias confst="sudo -Es nvim st-0.8.5/config.def.h"
 alias makest="sudo cp st-0.8.5/config.def.h st-0.8.5/config.h && cd st-0.8.5 && sudo make clean install"
 
-alias confmako="sudo nano .config/mako/config"
+alias confmako="sudo -Es nvim .config/mako/config"
 
-alias confwbar="sudo nano .config/waybar/config"
-alias confwbars="sudo nano .config/waybar/style.css"
+alias confwbar="sudo -Es nvim .config/waybar/config"
+alias confwbars="sudo -Es nvim .config/waybar/style.css"
 alias barupdate="sudo /bin/python /home/joey/wardoflores/Python-Projects/shellupdate/updatebartui.py"
 
 alias wipewofi="sudo /home/joey/wardoflores/Linux-Dotfiles/wofifilter.sh"
@@ -206,13 +207,13 @@ alias discordbot="/home/joey/wardoflores/Python-Discord-bot/discordbot.sh"
 
 # ADB 
 
-alias adbcheck="/home/joey/wardoflores/Android-Projects/adbcheck.sh"
-alias adbrestart="/home/joey/wardoflores/Android-Projects/adbrestart.sh"
+alias adbcheck="/home/joey/wardoflores/Android-Projects/adb-linux/adbcheck.sh"
+alias adbrestart="/home/joey/wardoflores/Android-Projects/adb-linux/adbrestart.sh"
 
 # Scrcpy
 
-alias scrcpystart="/home/joey/wardoflores/Android-Projects/scrcpystart.sh"
-alias scrcpyrec="/home/joey/wardoflores/Android-Projects/scrcpyrec.sh"
+alias scrcpystart="/home/joey/wardoflores/Android-Projects/adb-linux/scrcpystart.sh"
+alias scrcpyrec="/home/joey/wardoflores/Android-Projects/adb-linux/scrcpyrec.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

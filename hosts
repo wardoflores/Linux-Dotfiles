@@ -7,3 +7,7 @@
 
 127.0.0.1       wardoflores.basewebsite.net    localhost wardoflores
 ::1             wardoflores.basewebsite.net    localhost wardoflores
+
+# For Docker
+
+

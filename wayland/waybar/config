@@ -23,8 +23,8 @@
     },
     "custom/word": {
 	"format-alt": "          •          ",
-        "format": "Complete Obsidian Notes: Data Science, Definitions | Pfor: Upwork | Wordpress Blog site | Prepare for Moving out",
-	"on-click-right": "alacritty -e sudo /bin/python /home/joey/coalemus/Python-Projects/shellupdate/updatebartui.py",
+        "format": "To pay attention, this is our endless and proper work.  ",
+	"on-click-right": "alacritty -e sudo /bin/python /home/joey/wardoflores/Python-Projects/shellupdate/updatebartui.py",
 	//"max-length": 40,
         //"exec": "grep --only-matching '^alias\\s\\w*' .zshrc",
     	//"return-type": "json",

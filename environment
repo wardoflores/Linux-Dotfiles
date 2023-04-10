@@ -5,9 +5,10 @@
 #
 # Restart Device to reapply, 
 # restarting window manager wont work.
+SUDO_EDITOR=nvim
 #GDK_BACKEND=x11 # crashes wayland tho Enable for improved Zoom screenshare performance
 #QT_QPA_PLATFORM=wayland
-platform=wayland
+#platform=wayland
 #QT_QPA_PLATFORM=xcb
 #QT_QPA_PLATFORMTHEME=qt5ct
 CLUTTER_BACKEND=wayland

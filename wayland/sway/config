@@ -428,10 +428,10 @@ exec mako
 
 exec --no-startup-id
 {
-swaymsg "workspace $ws1; exec $term; exec $term -e syncthing -no-browser"
+swaymsg "workspace $ws1; exec $term;"
 swaymsg "workspace $ws2; exec brave-nightly"
 swaymsg "workspace $ws3; exec thunar"
-swaymsg "workspace $ws4; exec obsidian"
+swaymsg "workspace $ws4; exec obsidian; exec $term -e epy"
 swaymsg "workspace $ws7; exec github-desktop"
 swaymsg "workspace $ws9; exec cpupower-gui" 
 swaymsg "exec $term -e btop"

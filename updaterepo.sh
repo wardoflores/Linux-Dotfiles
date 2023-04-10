@@ -11,6 +11,10 @@ cd /etc
 sudo cp environment /home/joey/wardoflores/Linux-Dotfiles/
 sudo cp hosts /home/joey/wardoflores/Linux-Dotfiles/
 
+cd /home/joey/.config/nvim/
+
+sudo cp init.vim /home/joey/wardoflores/Linux-Dotfiles
+
 # Wayland system
 
 cd /home/joey/.config
