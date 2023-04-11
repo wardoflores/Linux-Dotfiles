@@ -15,6 +15,10 @@ cd /home/joey/.config/nvim/
 
 sudo cp init.vim /home/joey/wardoflores/Linux-Dotfiles
 
+cd /etc/default/
+
+sudo cp /etc/default/grub /home/joey/wardoflores/Linux-Dotfiles
+
 # Wayland system
 
 cd /home/joey/.config
