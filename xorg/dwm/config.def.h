@@ -1,80 +1,34 @@
 /* See LICENSE file for copyright and license details. */
 
-#include <X11/XF86keysym.h>
-
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const unsigned int gappx     = 5;        /* gaps between windows */
-static const int user_bh            = 15;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { 
-					"DejaVu Sans:size=10",
-					"Font Awesome 6 Free,Font Awesome 6 Free Solid:pixelsize=9:antialias=true:autohint=true",
-					"Font Awesome 6 Free,Font Awesome 6 Free Regular:pixelsize=1:antialias=true:autohint=true",
-					"Font Awesome 6 Brands,Font Awesome 6 Brands Regular:pixelsize=9:antialias=true:autohint=true",
-					"Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:pixelsize=1:antialias=true:autohint=true" 
-					};
-static const char dmenufont[]       = { "DejaVu Sans Mono:size=10" };
-static const char col_bg[]          = "#202020"; /* background */
-static const char col_bl[]          = "#ff9800"; /* border lines */
-static const char col_fg[]          = "#00e676"; /* text */
-static const char col_wh[]          = "#000a12"; /* I dont know */
-static const char col_cn[]          = "#ffeb3b"; /* Text and Highlight */
+static const char *fonts[]          = { "monospace:size=10" };
+static const char dmenufont[]       = "monospace:size=10";
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
-	/*               fg         bg   border   */
-	[SchemeNorm] = { col_fg, col_bg, col_bl  },
-	[SchemeSel]  = { col_cn, col_bg, col_bl  },
+	/*               fg         bg         border   */
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
 /* tagging */
-static const char *tags[] = { " ", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class				instance	title	tags-mask	isfloating	monitor */
-	{ "st-256color",			"st-256color",	NULL,	0,		1,		-1 },
-	{ "Brave-browser-nightly",  		"brave-browser-nightly",	NULL,		1 << 1,		0,		-1 },
-	{ "Google-chrome",			NULL,		NULL,	1 << 4,		0,		-1 },
-	{ "Thunar",				"thunar",	NULL,	1 << 2,		0,		-1 },
-	{ "fsearch",				NULL,		NULL,	1 << 2,		0,		-1 },
-	{ "org.qbittorrent.qBittorrent",	NULL,		NULL,	1 << 2,		0,		-1 },
-	{ NULL,					"obsidian",	NULL,	1 << (4 - 1),		0,		-1 },
-	{ "anki",				"Anki",		NULL,	1 << 3,		0,		-1 },
-	{ "microsoft-office-online",		NULL,		NULL,	1 << 3,		0,		-1 },
-	{ "org.gnome.Maps",			NULL,		NULL,	1 << 3,		0,		-1 },
-	{ "code",				NULL,		NULL,	1 << 4,		0,		-1 },
-	{ "GitHub Desktop",			"github desktop",NULL,	1 << 4,		0,		-1 },
-	{ "Calibre",				NULL,		NULL,	1 << 4,		0,		-1 },
-	{ "mongodb-compass",			NULL,		NULL,	1 << 4,		0,		-1 },
-	{ "postman",				NULL,		NULL,	1 << 4,		0,		-1 },
-	{ "mpv",				NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "droidcam",				NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "discord",				"discord",	NULL,	1 << 5,		0,		-1 },
-	{ "Mainwindow.py",			NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "lutris",				NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "itch",				NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "heroic",				NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "Steam",				NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "net-runelite-client-RuneLite",	NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "net-runelite-launcher-Launcher",	NULL,		NULL,	1 << 5,		0,		-1 },
-	{ "org-tlauncher-tlauncher-rmo-TLauncher",	NULL,	NULL,	1 << 5,		0,		-1 },
-	{ NULL,					"Minecraft* 1.16",	NULL,	1 << 5,	0,		-1 },
-	{ "obs",				NULL,		NULL,	1 << 6,		0,		-1 },
-	{ "krita",				NULL,		NULL,	1 << 6,		0,		-1 },
-	{ "inkscape",				NULL,		NULL,	1 << 6,		0,		-1 },
-	{ "Olive",				NULL,		NULL,	1 << 6,		0,		-1 },
-	{ "drawio",				NULL,		NULL,	1 << 6,		0,		-1 },
-	{ "tenacity",				NULL,		NULL,	1 << 6,		0,		-1 },
-	{ "librecad",				NULL,		NULL,	1 << 6,		0,		-1 },
-	{ "pavucontrol",			NULL,		NULL,	1 << 8,		0,		-1 },
-	{ "SoundWireServer",			NULL,		NULL,	1 << 8,		0,		-1 },
-	{ NULL,					"nwg-look",	NULL,	1 << 8,		0,		-1 },
-	{ "Spotify",				NULL,		NULL,	1 << 7,		0,		-1 },
+	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -91,7 +45,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -102,33 +56,18 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_cn, "-sf", col_wh, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-
-static const char *screenshot[] = { "flameshot", "gui", NULL };
-static const char *screenshotsel[] = { "maim", "-s", "-u", "|", "xclip", "-selection", "clipboard", "-t", "image/png", "-i", NULL };
-
-static Key keys[] = {
+static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
-	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-
-	{ MODKEY,			XK_Print,	spawn,	{.v = screenshot } },
-	{ MODKEY|ShiftMask,		XK_Print,	spawn,		{.v = screenshotsel } },
-
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_u,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
@@ -154,12 +93,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
-static Button buttons[] = {
+static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
