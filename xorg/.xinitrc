@@ -41,24 +41,35 @@ fi
 
 # start some nice programs
 
-if [ -d /etc/X11/xinit/xinitrc.d ]  ; then
-	for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-		[ -x "$f" ] && . "$f"
-	done
-	unset f
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
 fi
 
+# Keyboard Layout
 
-# xrandr--output eDP-1 --mode 1366x768 &
+# (basic layout is ok.)
 
-# loop
-#
+# dwm status
+
+dwmstatus 2>&1 >/dev/null &
+
+# Display Resolution
+
+xrandr --output eDP-1 --mode 1366x768 &
+
+# redshift
+
+exec redshift -l 7.0645451:125.6084371 &
+
+# Loop
 
 while true; do
 	dwm >/dev/null 2>&1
 done
 
-# Start dwm
-#
+# Window Manager
 
-exec dwm
+brave-browser-nightly; thunar; obsidian; github-desktop; exec dwm

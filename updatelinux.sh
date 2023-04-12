@@ -1,16 +1,17 @@
 # Copies Linux config files into the system config directories automatically.
 
-cd /home/wardoflores
+cd /home/joey
 
-sudo cp /home/wardoflores/GitHub/Linux-Dotfiles/zsh/.zshrc .zshrc
+sudo cp /home/joey/wardoflores/Linux-Dotfiles/zsh/.zshrc .zshrc
 
-cd /home/wardoflores/.config/nvim/
-sudo cp /home/wardoflores/.config/nvim/init.vim init.vim
+cd /home/joey/.config/nvim/
+
+sudo cp /home/joey/.config/nvim/init.vim init.vim
 
 
 cd /etc
 
-sudo cp /home/wardoflores/GitHub/Linux-Dotflies/grub grub
-sudo cp /home/wardoflores/GitHub/Linux-Dotfiles/environment environment
-sudo cp /home/wardoflores/GitHub/Linux-Dotfiles/hosts hosts
+sudo cp /home/joey/wardoflores/Linux-Dotflies/grub grub
+sudo cp /home/joey/wardoflores/Linux-Dotfiles/environment environment
+sudo cp /home/joey/wardoflores/Linux-Dotfiles/hosts hosts
 
