@@ -2,12 +2,28 @@
 
 TODO: Add descriptions.
 
+## Update automations
+
+- `updatelinux.sh`
+- `updatepython.sh`
+- `updaterepo.sh`
+- `updatewayland.sh`
+- `updatexorg.sh`
+- `wofifilter.sh`
+- `archinstallpkgs.sh`
+
 ## Linux system configs
 
 - `/etc/environment`
 - `/etc/hosts`
 - `/etc/sudoers`
-- `/home/joey/.zshrc`
+- `/home/wardoflores/.zshrc`
+
+## Xorg server configs
+
+- `.xinitrc`
+- `50-mouse-acceleration.conf`
+- `suckless/dwm
 
 ## Wayland server configs
 
@@ -24,26 +40,9 @@ TODO: Add descriptions.
 - `.config/brave-flags.conf`
 - `.config/electron-flags.conf`
 
-## Xorg server configs
-
-- `.xinitrc`
-- `50-mouse-acceleration.conf`
-- `dwm/config.def.h`
-- `dwmstatus/dwmstatus.c`
-
 ## Shell Scripts
 
-- `archinstallpkgs.sh`
 - `menufunc.sh`
-  - To learn how to do prompts and loops inside Shell Scripts.
-  - <https://towardsdatascience.com/how-to-create-a-foolproof-interactive-terminal-menu-with-bash-scripts-97911586d4e5>
 - `ubuntuapts.sh`
 
-### Update automations
 
-- `updatelinux.sh`
-- `updatepython.sh`
-- `updaterepo.sh`
-- `updatewayland.sh`
-- `updatexorg.sh`
-- `wofifilter.sh`

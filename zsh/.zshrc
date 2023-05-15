@@ -42,7 +42,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -62,7 +62,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -80,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux zsh-syntax-highlighting) # git
+plugins=(archlinux zsh-syntax-highlighting git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,35 +112,39 @@ source $ZSH/oh-my-zsh.sh
 alias c="clear"
 alias myalias="grep --only-matching '^alias\s\w*' .zshrc | less" 
 alias fonts="fc-list | cut -f2 -d: | sort -u | less -r"
-alias xprop="/home/joey/xpropawk.sh"
+alias xprop="/home/wardoflores/xpropawk.sh"
 alias nvim="sudo -Es nvim"
 
 # Dotfile automations
 
-alias pushdots="sudo /home/joey/wardoflores/Linux-Dotfiles/updaterepo.sh"
-alias pullenv="sudo /home/joey/wardoflores/Linux-Dotfiles/updatelinux.sh && makezsh"
-alias pullwl="sudo /home/joey/wardoflores/Linux-Dotfiles/updatewayland.sh"
-alias pullx="sudo /home/joey/wardoflores/Linux-Dotfiles/updatexorg.sh"
+alias pushdots="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updaterepo.sh"
+alias pullenv="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatelinux.sh && makezsh"
+alias pullwl="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatewayland.sh"
+alias pullx="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatexorg.sh"
 
 # Update automation
 
-alias makepy="/home/joey/wardoflores/Linux-Dotfiles/updatepython.sh"
+alias makepy="/home/wardoflores/GitHub/Linux-Dotfiles/updatepython.sh"
 
 # System configs
 
-alias confx="sudo -Es nvim /home/joey/.xinitrc"
+alias confx="sudo -Es nvim /home/wardoflores/.xinitrc"
 
-alias confzsh="sudo -Es nvim /home/joey/.zshrc"
-alias makezsh="source /home/joey/.zshrc"
+alias confzsh="sudo -Es nvim /home/wardoflores/.zshrc"
+alias makezsh="source /home/wardoflores/.zshrc"
 
 alias confgrub="sudo -Es nvim /etc/default/grub"
 alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
+alias droidmote="droidmote 2302 password"
+
 # Window manager configs
 
-alias confsway="sudo -Es nvim /home/joey/.config/sway/config"
-alias confdwm="sudo -Es nvim /home/joey/dwm-6.3/config.def.h"
-alias makedwm="sudo cp /home/joey/dwm-6.3/config.def.h /home/joey/dwm-6.3/config.h && cd dwm-6.3 && sudo make clean install && cd /home/joey/"
+alias confsway="sudo -Es nvim /home/wardoflores/.config/sway/config"
+alias confdwm="sudo -Es nvim /home/wardoflores/.config/suckless/dwm/config.def.h"
+alias makedwm="cd /home/wardoflores/.config/suckless/dwm && sudo rm config.h && sed -i '/SchemeUrg/d' /home/wardoflores/.cache/wal/colors-wal-dwm.h && sudo make clean install && cd /home/wardoflores/"
+alias exitdwm="pkill -15 Xorg"
+alias waldwm="sudo -Es nvim /home/wardoflores/.cache/wal/colors-wal-dwm.h"
 
 # Application configs
 
@@ -152,7 +156,7 @@ alias confmako="sudo -Es nvim .config/mako/config"
 
 alias confwbar="sudo -Es nvim .config/waybar/config"
 alias confwbars="sudo -Es nvim .config/waybar/style.css"
-alias barupdate="sudo /bin/python /home/joey/wardoflores/Python-Projects/shellupdate/updatebartui.py"
+alias barupdate="sudo /bin/python /home/wardoflores/Python-Projects/shellupdate/updatebartui.py"
 
 alias wipewofi="sudo /home/joey/wardoflores/Linux-Dotfiles/wofifilter.sh"
 
@@ -207,8 +211,8 @@ alias discordbot="/home/joey/wardoflores/Python-Discord-bot/discordbot.sh"
 
 # ADB 
 
-alias adbcheck="/home/joey/wardoflores/Android-Projects/adb-linux/adbcheck.sh"
-alias adbrestart="/home/joey/wardoflores/Android-Projects/adb-linux/adbrestart.sh"
+alias adbcheck="/home/wardoflores/Android-Projects/adb-linux/adbcheck.sh"
+alias adbrestart="/home/wardoflores/Android-Projects/adb-linux/adbrestart.sh"
 
 # Scrcpy
 

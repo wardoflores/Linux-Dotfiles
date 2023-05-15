@@ -1,12 +1,17 @@
 # Copies Xorg config files into the Xorg system config directories automatically.
 
-sudo cp /home/joey/wardoflores/Linux-Dotfiles/xorg/.xinitrc /home/joey/
-sudo cp /home/joey/wardoflores/Linux-Dotfiles/xorg/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+sudo cp -r /home/wardoflores/Linux-Dotfiles/xorg/.xinitrc /home/wardoflores/
+sudo cp /home/wardoflores/Linux-Dotfiles/xorg/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
-cd /home/joey/dwm-6.3/
+cd /home/wardoflores/.config/suckless/
 
-sudo cp /home/joey/wardoflores/Linux-Dotfiles/xorg/dwm/config.def.h config.def.h
+sudo cp -r /home/wardoflores/GitHub/Linux-Dotfiles/xorg/suckless/dwm/ /home/wardoflores/.config/suckless/
 
-cd /home/joey/dwmstatus/
+sudo cp -r /home/wardoflores/GitHub/Linux-Dotfiles/xorg/suckless/dmenu/ /home/wardoflores/.config/suckless/
 
-sudo cp /home/joey/wardoflores/Linux-Dotfiles/xorg/dwmstatus/ dwmstatus.c
+sudo cp -r /home/wardoflores/GitHub/Linux-Dotfiles/xorg/suckless/slstatus/ /home/wardoflores/.config/suckless/
+
+sudo cp -r /home/wardoflores/GitHub/Linux-Dotfiles/xorg/suckless/st/ /home/wardoflores/.config/suckless/
+
+
+

@@ -14,7 +14,6 @@ pip install pynput
 pip install asyncio
 pip install ipykernel
 pip install speechrecognition
-pip install pywal
 echo Installing Webscraping packages
 pip install beautifulsoup4
 pip install lxml
