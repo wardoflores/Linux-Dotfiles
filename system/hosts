@@ -1,13 +1,10 @@
 # Static table lookup for hostnames.
 # See hosts(5) for details.
-127.0.0.1 localhost
-127.0.0.1 wardoflores
+127.0.0.1 localhost wardoflores.basewebsite.net
+127.0.0.1 wardoflores wardoflores.basewebsite.net
+::1     ip6-localhost
 
-# For Wordpress
+# For Tor
 
-127.0.0.1       wardoflores.basewebsite.net    localhost wardoflores
-::1             wardoflores.basewebsite.net    localhost wardoflores
-
-# For Docker
-
+# 49.146.41.224 cbrelay
 

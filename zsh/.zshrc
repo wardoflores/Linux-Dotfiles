@@ -4,6 +4,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+ZSH_DISABLE_COMPFIX="true"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -118,9 +119,9 @@ alias nvim="sudo -Es nvim"
 # Dotfile automations
 
 alias pushdots="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updaterepo.sh"
-alias pullenv="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatelinux.sh && makezsh"
-alias pullwl="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatewayland.sh"
-alias pullx="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatexorg.sh"
+alias pullenv="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatesys.sh && makezsh"
+alias pullwl="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatesyswl.sh"
+alias pullx="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatesysx.sh"
 
 # Update automation
 
@@ -158,10 +159,11 @@ alias confwbar="sudo -Es nvim .config/waybar/config"
 alias confwbars="sudo -Es nvim .config/waybar/style.css"
 alias barupdate="sudo /bin/python /home/wardoflores/Python-Projects/shellupdate/updatebartui.py"
 
-alias wipewofi="sudo /home/joey/wardoflores/Linux-Dotfiles/wofifilter.sh"
+alias wipewofi="sudo /home/wardoflores/Linux-Dotfiles/wofifilter.sh"
 
 alias btop="btop --utf-force"
-alias upwork="/opt/Upwork/upwork"
+alias mupdf="mupdf -I -r 140 -C 000000"
+alias book="mupdf -I -r 140 -C 000000 /home/wardoflores/Books/*"
 
 alias shizuku="adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
 alias sucode="sudo code --user-data-dir=~/root"
