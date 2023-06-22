@@ -1,4 +1,9 @@
 #!/bin/zsh
+# This {language} file uses the following encoding: utf-8
+# {module name}
+# {project name}: {github link}
+# Created YYYY-MM-DD
+# Copyright (c) 2023 Wardo Flores
 # Was for full system upgrade, but there are more efficient ways and so it's repurposed to reinstall all packages in a new System.
 #
 su

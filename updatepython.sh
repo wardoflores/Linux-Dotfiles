@@ -1,4 +1,10 @@
 #!/bin/zsh
+# This {language} file uses the following encoding: utf-8
+# {module name}
+# {project name}: {github link}
+# Created YYYY-MM-DD
+# Copyright (c) 2023 Wardo Flores
+#
 dt=`date '+%d/%m/%Y_%H:%M:%S'`
 echo Started: $dt
 echo Installing Standard packages
