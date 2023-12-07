@@ -11,29 +11,16 @@ XMODIFIERS=@im=fcitx
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
 
 fi
 
 if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
+    setxkbmap -option caps:escape,shift:both_capslock
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
 
 fi
@@ -65,7 +52,7 @@ fi
 # dwmblocks-async
 #
 
-dwmblocks &
+#dwmblocks &
 
 # loop exit of dwm
 #

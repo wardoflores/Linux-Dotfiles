@@ -27,6 +27,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# 2023-12-08 pywal
+#
+wal -q --vte -i Images/WallpapersDesktop/wallhaven-vg52ql_1366x768.png
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -118,7 +122,7 @@ alias nvim="sudo -Es nvim"
 
 # Dotfile automations
 
-alias pushdots="sudo $HOME/GitHub/Linux-Dotfiles/updaterepo.sh"
+alias pushdots="$HOME/GitHub/Linux-Dotfiles/repositoryupdate.sh"
 alias pullenv="sudo $HOME/GitHub/Linux-Dotfiles/updatesys.sh && makezsh"
 alias pullwl="sudo $HOME/GitHub/Linux-Dotfiles/updatesyswl.sh"
 alias pullx="sudo $HOME/GitHub/Linux-Dotfiles/updatesysx.sh"
@@ -151,7 +155,7 @@ alias makest="sudo cp st-0.8.5/config.def.h st-0.8.5/config.h && cd st-0.8.5 && 
 alias shizuku="adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
 alias sucode="sudo code --user-data-dir=~/root"
 alias droidmote="droidmote 2302 password"
-alias pyserver="/bin/python /home/joey/wardoflores/Python-Projects/server/server.py"
+alias pyserver="/bin/python $HOME/wardoflores/Python-Projects/server/server.py"
 
 # Xorg config
 #
@@ -184,43 +188,43 @@ alias dance="mpv Videos/GIF/cockroach.gif & mpv Videos/GIF/t-rex-frog.gif"
 
 alias makepyvenv="python -m venv ."
 alias makepip="python -m ensurepip --upgrade"
-alias calctui="/bin/python /home/joey/wardoflores/Python-Projects/calculator/calctui.py"
-alias calcgui="/bin/python /home/joey/wardoflores/Python-Projects/calculator/calcgui.py"
+alias calctui="/bin/python $HOME/wardoflores/Python-Projects/calculator/calctui.py"
+alias calcgui="/bin/python $HOME/wardoflores/Python-Projects/calculator/calcgui.py"
 alias makepy="$HOME/GitHub/Linux-Dotfiles/updatepython.sh"
 
 # Autoinput scripts
 
-alias autoclick="/bin/python /home/joey/wardoflores/Python-Projects/cursor/autoclick.py"
-alias afkpress="/bin/python /home/joey/wardoflores/Python-Projects/cursor/afkpress.py"
-alias afkmove="/bin/python /home/joey/wardoflores/Python-Projects/cursor/afkmove.py"
-alias idlescroll="/bin/python /home/joey/wardoflores/Python-Projects/cursor/afkscroll.py"
-alias typespam="/bin/python /home/joey/wardoflores/Python-Projects/spambot/typespam.py"
-alias filespam="/bin/python /home/joey/wardoflores/Python-Projects/spambot/filespam.py"
-alias keylogger="/bin/python /home/joey/wardoflores/Python-Projects/keylogger/keylogger.py"
+alias autoclick="/bin/python $HOME/wardoflores/Python-Projects/cursor/autoclick.py"
+alias afkpress="/bin/python $HOME/wardoflores/Python-Projects/cursor/afkpress.py"
+alias afkmove="/bin/python $HOME/wardoflores/Python-Projects/cursor/afkmove.py"
+alias idlescroll="/bin/python $HOME/wardoflores/Python-Projects/cursor/afkscroll.py"
+alias typespam="/bin/python $HOME/wardoflores/Python-Projects/spambot/typespam.py"
+alias filespam="/bin/python $HOME/wardoflores/Python-Projects/spambot/filespam.py"
+alias keylogger="/bin/python $HOME/wardoflores/Python-Projects/keylogger/keylogger.py"
 
 # 
 
-alias birthday="/bin/python /home/joey/wardoflores/Python-Projects/birthdaywisher/happybirthday.py"
-alias meditate="/bin/python /home/joey/wardoflores/Python-Projects/meditation/meditate.py"
+alias birthday="/bin/python $HOME/wardoflores/Python-Projects/birthdaywisher/happybirthday.py"
+alias meditate="/bin/python $HOME/wardoflores/Python-Projects/meditation/meditate.py"
 
 # Python API scripts
 
-alias voassist="/bin/python /home/joey/wardoflores/Python-Projects/voiceassistant/voasst.py"
-alias votyper="/bin/python /home/joey/wardoflores/Python-Projects/voiceassistant/voicetyper.py"
-alias tts="/bin/python /home/joey/wardoflores/Python-Projects/voiceassistant/TTS.py"
-alias meetcli="/home/joey/wardoflores/Python-Projects/selenium/meetcli.sh"
-alias meetgui="/home/joey/wardoflores/Python-Projects/selenium/meetgui.sh"
+alias voassist="/bin/python $HOME/wardoflores/Python-Projects/voiceassistant/voasst.py"
+alias votyper="/bin/python $HOME/wardoflores/Python-Projects/voiceassistant/voicetyper.py"
+alias tts="/bin/python $HOME/wardoflores/Python-Projects/voiceassistant/TTS.py"
+alias meetcli="$HOME/wardoflores/Python-Projects/selenium/meetcli.sh"
+alias meetgui="$HOME/wardoflores/Python-Projects/selenium/meetgui.sh"
 
 # Python Bot API Scripts
 
-alias netspeed="/bin/python /home/joey/wardoflores/Python-Projects/internetspeed/speedprinter.py"
-alias wolfram="/bin/python /home/joey/wardoflores/Python-Projects/wolramalpha/apicaller.py"
+alias netspeed="/bin/python $HOME/wardoflores/Python-Projects/internetspeed/speedprinter.py"
+alias wolfram="/bin/python $HOME/wardoflores/Python-Projects/wolramalpha/apicaller.py"
 
 # Python Social bot API Scripts
 
-alias twitterbot="/home/joey/wardoflores/Python-Twitter-Bot/twitterbot.sh"
-alias redditbot="/home/joey/wardoflores/Python-Reddit-Bot/redditbot.sh"
-alias discordbot="/home/joey/wardoflores/Python-Discord-bot/discordbot.sh"
+alias twitterbot="$HOME/wardoflores/Python-Twitter-Bot/twitterbot.sh"
+alias redditbot="$HOME/wardoflores/Python-Reddit-Bot/redditbot.sh"
+alias discordbot="$HOME/wardoflores/Python-Discord-bot/discordbot.sh"
 
 # ADB 
 
@@ -229,8 +233,8 @@ alias adbrestart="$HOME/Android-Projects/adb-linux/adbrestart.sh"
 
 # Scrcpy
 
-alias scrcpystart="/home/joey/wardoflores/Android-Projects/adb-linux/scrcpystart.sh"
-alias scrcpyrec="/home/joey/wardoflores/Android-Projects/adb-linux/scrcpyrec.sh"
+alias scrcpystart="$HOME/wardoflores/Android-Projects/adb-linux/scrcpystart.sh"
+alias scrcpyrec="$HOME/wardoflores/Android-Projects/adb-linux/scrcpyrec.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

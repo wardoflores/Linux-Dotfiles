@@ -1,9 +1,9 @@
 #!/bin/zsh
-# This {language} file uses the following encoding: utf-8
-# {module name}
-# {project name}: {github link}
-# Created YYYY-MM-DD
-# Copyright (c) 2023 Wardo Flores
+# This Bourne Schell script file uses the following encoding: utf-8
+# desktop file update for dmenu and wofi
+# Linux-Dotfiles: https://github.com/wardoflores/Linux-Dotfiles/tree/main
+# Created 2021-10-07
+# Copyright (c) 2023 wardoflores
 #
 # Automatically filters unused desktop icons to filter wofi.
 
