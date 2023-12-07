@@ -4,6 +4,9 @@ userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 
 # merge in defaults and keymaps
 
@@ -52,11 +55,19 @@ fi
 # Change resolution to 13in laptop
 #
 
-# xrandr--output eDP-1 --mode 1366x768 &
+# xrandr--output eDP1 --mode 1366x768 &
 
-»dwmstatus 2>&1 >/dev/null &«
+# dwmstatus
+#
 
-# loop
+# »dwmstatus 2>&1 >/dev/null &«
+
+# dwmblocks-async
+#
+
+dwmblocks &
+
+# loop exit of dwm
 #
 
 while true; do

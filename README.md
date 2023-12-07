@@ -17,7 +17,7 @@ TODO: Add descriptions.
 - `/etc/environment`
 - `/etc/hosts`
 - `/etc/sudoers`
-- `/home/wardoflores/.zshrc`
+- `$HOME/.zshrc`
 
 ## Xorg server configs
 

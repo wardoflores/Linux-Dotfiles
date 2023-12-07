@@ -37,7 +37,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -113,69 +113,80 @@ source $ZSH/oh-my-zsh.sh
 alias c="clear"
 alias myalias="grep --only-matching '^alias\s\w*' .zshrc | less" 
 alias fonts="fc-list | cut -f2 -d: | sort -u | less -r"
-alias xprop="/home/wardoflores/xpropawk.sh"
+alias xprop="$HOME/xpropawk.sh"
 alias nvim="sudo -Es nvim"
 
 # Dotfile automations
 
-alias pushdots="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updaterepo.sh"
-alias pullenv="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatesys.sh && makezsh"
-alias pullwl="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatesyswl.sh"
-alias pullx="sudo /home/wardoflores/GitHub/Linux-Dotfiles/updatesysx.sh"
+alias pushdots="sudo $HOME/GitHub/Linux-Dotfiles/updaterepo.sh"
+alias pullenv="sudo $HOME/GitHub/Linux-Dotfiles/updatesys.sh && makezsh"
+alias pullwl="sudo $HOME/GitHub/Linux-Dotfiles/updatesyswl.sh"
+alias pullx="sudo $HOME/GitHub/Linux-Dotfiles/updatesysx.sh"
 
-# Update automation
+# Work automation
 
-alias makepy="/home/wardoflores/GitHub/Linux-Dotfiles/updatepython.sh"
+alias trackeroop="watch -n.1 python $HOME/detectCamOn.py"
+alias work="upwork && sleep 5 && slack && sleep && google-chrome-stable  && sleep 5 && trackeroop"
 
 # System configs
-
-alias confx="sudo -Es nvim /home/wardoflores/.xinitrc"
-
-alias confzsh="sudo -Es nvim /home/wardoflores/.zshrc"
-alias makezsh="source /home/wardoflores/.zshrc"
 
 alias confgrub="sudo -Es nvim /etc/default/grub"
 alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-alias droidmote="droidmote 2302 password"
+# Shell config
+#
 
-# Window manager configs
+alias confzsh="sudo -Es nvim $HOME/.zshrc"
+alias makezsh="source $HOME/.zshrc"
 
-alias confsway="sudo -Es nvim /home/wardoflores/.config/sway/config"
-alias confdwm="sudo -Es nvim /home/wardoflores/.config/suckless/dwm/config.def.h"
-alias makedwm="cd /home/wardoflores/.config/suckless/dwm && sudo rm config.h && sed -i '/SchemeUrg/d' /home/wardoflores/.cache/wal/colors-wal-dwm.h && sudo make clean install && cd /home/wardoflores/"
-alias exitdwm="pkill -15 Xorg"
-alias waldwm="sudo -Es nvim /home/wardoflores/.cache/wal/colors-wal-dwm.h"
-
-# Application configs
+# Terminal
+#
 
 alias confalacritty="sudo -Es nvim .config/alacritty/alacritty.yml"
 alias confst="sudo -Es nvim st-0.8.5/config.def.h"
 alias makest="sudo cp st-0.8.5/config.def.h st-0.8.5/config.h && cd st-0.8.5 && sudo make clean install"
 
-alias confmako="sudo -Es nvim .config/mako/config"
-
-alias confwbar="sudo -Es nvim .config/waybar/config"
-alias confwbars="sudo -Es nvim .config/waybar/style.css"
-alias barupdate="sudo /bin/python /home/wardoflores/Python-Projects/shellupdate/updatebartui.py"
-
-alias wipewofi="sudo /home/wardoflores/Linux-Dotfiles/wofifilter.sh"
-
-alias btop="btop --utf-force"
-alias mupdf="mupdf -I -r 140 -C 000000"
-alias book="mupdf -I -r 140 -C 000000 /home/wardoflores/Books/*"
+# servers
 
 alias shizuku="adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh"
 alias sucode="sudo code --user-data-dir=~/root"
-
-# Server automation
-
+alias droidmote="droidmote 2302 password"
 alias pyserver="/bin/python /home/joey/wardoflores/Python-Projects/server/server.py"
+
+# Xorg config
+#
+
+alias confx="sudo -Es nvim $HOME/.xinitrc"
+alias confdwm="sudo -Es nvim $HOME/.config/suckless/dwm/config.def.h"
+alias makedwm="cd $HOME/.config/suckless/dwm && sudo rm config.h && sed -i '/SchemeUrg/d' $HOME/.cache/wal/colors-wal-dwm.h && sudo make clean install && cd $HOME/"
+alias exitdwm="pkill -15 Xorg"
+alias waldwm="sudo -Es nvim $HOME/.cache/wal/colors-wal-dwm.h"
+
+# Wayland
+#
+
+alias confsway="sudo -Es nvim $HOME/.config/sway/config"
+alias confwbar="sudo -Es nvim .config/waybar/config"
+alias confwbars="sudo -Es nvim .config/waybar/style.css"
+alias barupdate="sudo /bin/python $HOME/Python-Projects/shellupdate/updatebartui.py"
+alias wipewofi="sudo $HOME/Linux-Dotfiles/wofifilter.sh"
+alias confmako="sudo -Es nvim .config/mako/config"
+
+# Application configs
+
+alias confnvim="sudo -Es nvim $HOME/.config/nvim/init.vim"
+alias btop="btop --utf-force"
+alias mupdf="mupdf -I -r 140 -C 000000"
+alias book="mupdf -I -r 140 -C 000000 $HOME/Books/*"
+alias dance="mpv Videos/GIF/cockroach.gif & mpv Videos/GIF/t-rex-frog.gif"
 
 # Python Scripts
 
+alias makepyvenv="python -m venv ."
+alias makepip="python -m ensurepip --upgrade"
 alias calctui="/bin/python /home/joey/wardoflores/Python-Projects/calculator/calctui.py"
 alias calcgui="/bin/python /home/joey/wardoflores/Python-Projects/calculator/calcgui.py"
+alias makepy="$HOME/GitHub/Linux-Dotfiles/updatepython.sh"
 
 # Autoinput scripts
 
@@ -213,8 +224,8 @@ alias discordbot="/home/joey/wardoflores/Python-Discord-bot/discordbot.sh"
 
 # ADB 
 
-alias adbcheck="/home/wardoflores/Android-Projects/adb-linux/adbcheck.sh"
-alias adbrestart="/home/wardoflores/Android-Projects/adb-linux/adbrestart.sh"
+alias adbcheck="$HOME/Android-Projects/adb-linux/adbcheck.sh"
+alias adbrestart="$HOME/Android-Projects/adb-linux/adbrestart.sh"
 
 # Scrcpy
 

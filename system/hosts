@@ -1,7 +1,13 @@
 # Static table lookup for hostnames.
 # See hosts(5) for details.
-127.0.0.1 localhost wardoflores.basewebsite.net
-127.0.0.1 wardoflores wardoflores.basewebsite.net
+
+# For Wordpress
+#<ip-address>   <hostname.domain.org>   <hostname>
+127.0.0.1 wardoflores.ecommerce.net wardoflores
+127.0.0.1 wardoflores.ecommerce.net wardoflores
+127.0.0.1
+localhost
+
 ::1     ip6-localhost
 
 # For Tor

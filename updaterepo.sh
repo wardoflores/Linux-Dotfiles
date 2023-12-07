@@ -9,65 +9,65 @@
 
 # Linux system
 
-cd /home/wardoflores
+cd $HOME
 
-sudo cp .zshrc /home/wardoflores/GitHub/Linux-Dotfiles/zsh/
+sudo cp .zshrc $HOME/GitHub/Linux-Dotfiles/zsh/
 
 cd /etc
 
-sudo cp environment /home/wardoflores/GitHub/Linux-Dotfiles/system/
-sudo cp hosts /home/wardoflores/GitHub/Linux-Dotfiles/system/
+sudo cp environment $HOME/GitHub/Linux-Dotfiles/system/
+sudo cp hosts $HOME/GitHub/Linux-Dotfiles/system/
 
 cd /etc/default/
 
-sudo cp /etc/default/grub /home/wardoflores/GitHub/Linux-Dotfiles/system/
+sudo cp /etc/default/grub $HOME/GitHub/Linux-Dotfiles/system/
 
-cd /home/wardoflores/.config/nvim/
+cd $HOME/.config/nvim/
 
-sudo cp init.vim /home/wardoflores/GitHub/Linux-Dotfiles/applications/neovim/
+sudo cp init.vim $HOME/GitHub/Linux-Dotfiles/applications/neovim/
 
 # Xorg system
 
-sudo cp /home/wardoflores/.xinitrc /home/wardoflores/GitHub/Linux-Dotfiles/xorg
-sudo cp /etc/X11/xorg.conf.d/50-mouse-acceleration.conf /home/wardoflores/GitHub/Linux-Dotfiles/xorg
+sudo cp $HOME/.xinitrc $HOME/GitHub/Linux-Dotfiles/xorg
+sudo cp /etc/X11/xorg.conf.d/50-mouse-acceleration.conf $HOME/GitHub/Linux-Dotfiles/xorg
 
-cd /home/wardoflores/.config/suckless/
+cd $HOME/.config/suckless/
 
-sudo cp -r dwm /home/wardoflores/GitHub/Linux-Dotfiles/xorg/suckless/
+sudo cp -r dwm $HOME/GitHub/Linux-Dotfiles/xorg/suckless/
 
-sudo cp -r dmenu /home/wardoflores/GitHub/Linux-Dotfiles/xorg/suckless/
+sudo cp -r dmenu $HOME/GitHub/Linux-Dotfiles/xorg/suckless/
 
-sudo cp -r slstatus /home/wardoflores/GitHub/Linux-Dotfiles/xorg/suckless/
+sudo cp -r slstatus $HOME/GitHub/Linux-Dotfiles/xorg/suckless/
 
-sudo cp -r st /home/wardoflores/GitHub/Linux-Dotfiles/xorg/suckless/
+sudo cp -r st $HOME/GitHub/Linux-Dotfiles/xorg/suckless/
 
 # Wayland system
 
-cd /home/wardoflores/.config
+cd $HOME/.config
 
-sudo cp brave-flags.conf /home/wardoflores/GitHub/Linux-Dotfiles/wayland
-sudo cp electron-flags.conf /home/wardoflores/GitHub/Linux-Dotfiles/wayland
+sudo cp brave-flags.conf $HOME/GitHub/Linux-Dotfiles/wayland
+sudo cp electron-flags.conf $HOME/GitHub/Linux-Dotfiles/wayland
 
-cd /home/wardoflores/.config/sway
+cd $HOME/.config/sway
 
-sudo cp config /home/wardoflores/GitHub/Linux-Dotfiles/wayland/sway/
+sudo cp config $HOME/GitHub/Linux-Dotfiles/wayland/sway/
 
 cd /home/.config/alacritty
 
-sudo cp alacritty.yml /home/wardoflores/GitHub/Linux-Dotfiles/wayland/alacritty/
+sudo cp alacritty.yml $HOME/GitHub/Linux-Dotfiles/wayland/alacritty/
 
-cd /home/wardoflores/.config/wofi
+cd $HOME/.config/wofi
 
-sudo cp config /home/wardoflores/GitHub/Linux-Dotfiles/wayland/wofi/
-sudo cp style.css /home/wardoflores/GitHub/Linux-Dotfiles/wayland/wofi/
+sudo cp config $HOME/GitHub/Linux-Dotfiles/wayland/wofi/
+sudo cp style.css $HOME/GitHub/Linux-Dotfiles/wayland/wofi/
 
-cd /home/wardoflores/.config/waybar
+cd $HOME/.config/waybar
 
-sudo cp config /home/wardoflores/GitHub/Linux-Dotfiles/wayland/waybar/
-sudo cp style.css /home/wardoflores/GitHub/Linux-Dotfiles/wayland/waybar/
+sudo cp config $HOME/GitHub/Linux-Dotfiles/wayland/waybar/
+sudo cp style.css $HOME/GitHub/Linux-Dotfiles/wayland/waybar/
 
-cd /home/wardoflores/.config/mako
+cd $HOME/.config/mako
 
-sudo cp config /home/wardoflores/GitHub/Linux-Dotfiles/wayland/mako/
+sudo cp config $HOME/GitHub/Linux-Dotfiles/wayland/mako/
 
 

@@ -29,6 +29,7 @@ set ttyfast                 " Speed up scrolling in Vim
 "
 call plug#begin()
 
+"Plug 'vim-ledger'
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
@@ -41,6 +42,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'luk400/vim-jukit' 
 
 call plug#end()
+
+let g:ledger_autofmt_bufwritepre = 1
 
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -68,6 +71,11 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 :inoremap kj <Esc>
 :vnoremap jk <Esc>
 :vnoremap kj <Esc>
+
+map('n', '<C-j>', '<cmd>:cn<cr>')
+map('n', '<C-k>', '<cmd>:cp<cr>')
+map('n', '<C-S-j>', '<cmd>:cnf<cr>')
+map('n', '<C-S-k>', '<cmd>:cpf<cr>')
 
 " returns all modified files of the current git repo
 " `2>/dev/null` makes the command fail quietly, so that when we are not

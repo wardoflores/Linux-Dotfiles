@@ -6,18 +6,30 @@
 # Restart Device to reapply, 
 # restarting window manager wont work.
 SUDO_EDITOR=nvim
+# Xorg
 #GDK_BACKEND=x11 # crashes wayland tho Enable for improved Zoom screenshare performance
+WINIT_UNIX_BACKEND=x11
+# Wayland
 #QT_QPA_PLATFORM=wayland
 #platform=wayland
 #QT_QPA_PLATFORM=xcb
 #QT_QPA_PLATFORMTHEME=qt5ct
 CLUTTER_BACKEND=wayland
 #SDL_VIDEODRIVER=wayland
-WINIT_UNIX_BACKEND=x11
 _JAVA_AWT_WM_NONREPARENTING=1
 SWAY_CURSOR_THEME=Breeze_Default
-3DISPLAY=unix$DISPLAY # To run tkinter in sudo
+#
+# To run tkinter in sudo
+3DISPLAY=unix$DISPLAY
+#
+# fcitx
+#
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+#
 # Settings for Japanese input
 GTK_IM_MODULE='ibus'
 QT_IM_MODULE='ibus'
 XMODIFIERS=@im='ibus'
+
