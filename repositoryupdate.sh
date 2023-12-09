@@ -12,6 +12,7 @@
 cd $HOME
 
 sudo cp .zshrc $HOME/GitHub/Linux-Dotfiles/zsh/
+sudo cp .tmux.conf $HOME/GitHub/Linux-Dotfiles/applications
 
 cd /etc
 
@@ -24,7 +25,7 @@ sudo cp /etc/default/grub $HOME/GitHub/Linux-Dotfiles/system/
 
 cd $HOME/.config/nvim/
 
-sudo cp init.vim $HOME/GitHub/Linux-Dotfiles/applications/neovim/
+sudo cp init.vim $HOME/GitHub/Linux-Dotfiles/applications/
 
 # Xorg system
 

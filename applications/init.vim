@@ -39,7 +39,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'preservim/nerdcommenter'
-Plug 'luk400/vim-jukit' 
+"Plug 'luk400/vim-jukit' "Disable for now 2023-12-08 
 
 call plug#end()
 
@@ -102,6 +102,6 @@ let g:startify_lists = [
  let g:startify_custom_header =
        \ startify#pad(split(system('figlet -w 100 toil in the night.'), '\n'))
 
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0 "set to 0 to disable 2023-12-08
 
 let g:airline_theme='distinguished'
