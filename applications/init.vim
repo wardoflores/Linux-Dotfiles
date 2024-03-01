@@ -77,6 +77,9 @@ map('n', '<C-k>', '<cmd>:cp<cr>')
 map('n', '<C-S-j>', '<cmd>:cnf<cr>')
 map('n', '<C-S-k>', '<cmd>:cpf<cr>')
 
+" 2024-01-17 ctrl Backspace
+:inoremap <C-BS> <C-W>
+
 " returns all modified files of the current git repo
 " `2>/dev/null` makes the command fail quietly, so that when we are not
 " in a git repo, the list will be empty

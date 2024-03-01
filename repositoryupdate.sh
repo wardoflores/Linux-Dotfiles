@@ -3,16 +3,12 @@
 # Repository Update
 # Linux-Dotfiles: https://github.com/wardoflores/Linux-Dotfiles/tree/main
 # Created 2021-10-07
-# Copyright (c) 2023 wardoflores
+# Copyright (c) 2023-2024 wardoflores
 
 # Copies Linux, Wayland, Xorg config files into this repository automatically.
+# 2024-01-18 Requiring Automating of new .config files
 
 # Linux system
-
-cd $HOME
-
-sudo cp .zshrc $HOME/GitHub/Linux-Dotfiles/zsh/
-sudo cp .tmux.conf $HOME/GitHub/Linux-Dotfiles/applications
 
 cd /etc
 
@@ -23,26 +19,43 @@ cd /etc/default/
 
 sudo cp /etc/default/grub $HOME/GitHub/Linux-Dotfiles/system/
 
+## User
+
+cd $HOME
+sudo cp .zshrc $HOME/GitHub/Linux-Dotfiles/zsh/
+sudo cp .tmux.conf $HOME/GitHub/Linux-Dotfiles/applications
+
 cd $HOME/.config/nvim/
 
 sudo cp init.vim $HOME/GitHub/Linux-Dotfiles/applications/
 
+
+
+
 # Xorg system
 
-sudo cp $HOME/.xinitrc $HOME/GitHub/Linux-Dotfiles/xorg
 sudo cp /etc/X11/xorg.conf.d/50-mouse-acceleration.conf $HOME/GitHub/Linux-Dotfiles/xorg
+
+## User
+sudo cp $HOME/.xinitrc $HOME/GitHub/Linux-Dotfiles/xorg
 
 cd $HOME/.config/suckless/
 
 sudo cp -r dwm $HOME/GitHub/Linux-Dotfiles/xorg/suckless/
+sudo rm -rf $HOME/GitHub/Linux-Dotfiles/xorg/suckless/dwm/.git
 
 sudo cp -r dmenu $HOME/GitHub/Linux-Dotfiles/xorg/suckless/
+sudo rm -rf $HOME/GitHub/Linux-Dotfiles/xorg/suckless/dmenu/.git
 
 sudo cp -r slstatus $HOME/GitHub/Linux-Dotfiles/xorg/suckless/
+sudo rm -rf $HOME/GitHub/Linux-Dotfiles/xorg/suckless/slstatus/.git
 
 sudo cp -r st $HOME/GitHub/Linux-Dotfiles/xorg/suckless/
+sudo rm -rf $HOME/GitHub/Linux-Dotfiles/xorg/suckless/st/.git
 
 # Wayland system
+
+## User
 
 cd $HOME/.config
 

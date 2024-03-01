@@ -5,9 +5,12 @@
 #
 # Restart Device to reapply, 
 # restarting window manager wont work.
+#
+# Terminal Editor
 SUDO_EDITOR=nvim
+#
 # Xorg
-#GDK_BACKEND=x11 # crashes wayland tho Enable for improved Zoom screenshare performance
+#GDK_BACKEND=x11 # crashes wayland, if using Xorg: Enable for improved Zoom screenshare performance
 WINIT_UNIX_BACKEND=x11
 # Wayland
 #QT_QPA_PLATFORM=wayland
@@ -23,13 +26,13 @@ SWAY_CURSOR_THEME=Breeze_Default
 3DISPLAY=unix$DISPLAY
 #
 # fcitx
-#
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
-#
 # Settings for Japanese input
 GTK_IM_MODULE='ibus'
 QT_IM_MODULE='ibus'
 XMODIFIERS=@im='ibus'
-
+#
+# 2024-02-06 hledger
+LEDGER_FILE=~/GitHub/Obsidian-Personal-Vault/wardoflores.ledger

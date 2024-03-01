@@ -1,16 +1,22 @@
 # Static table lookup for hostnames.
 # See hosts(5) for details.
 
-# For Wordpress
-#<ip-address>   <hostname.domain.org>   <hostname>
-127.0.0.1 wardoflores.ecommerce.net wardoflores
-127.0.0.1 wardoflores.ecommerce.net wardoflores
-127.0.0.1
-localhost
+# loopback to IPv4 and IPv6 2024-02-24
+127.0.0.1   localhost
+::1         localhost 
+## Social Networking Service block 2024-02-14
+0.0.0.0 youtube.com
+0.0.0.0 twitch.tv
+0.0.0.0 facebook.com
+0.0.0.0 instagram.com
+0.0.0.0 twitter.com
+0.0.0.0 reddit.com
 
-::1     ip6-localhost
+# For Wordpress (2024-02-24 .localhost as TLD)
+##<ip-address>   <hostname.SLD.TLD> /  <hostname>
+127.0.0.1:81    wfwpshop.localhost
+127.0.0.1:82    wfwptheme.localhost
 
 # For Tor
-
 # 49.146.41.224 cbrelay
 
