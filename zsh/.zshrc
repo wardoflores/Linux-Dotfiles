@@ -3,7 +3,7 @@
 #fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# editirmations, etc.) must go above this block; everything else may go below.
 ZSH_DISABLE_COMPFIX="true"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -30,7 +30,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # 2023-12-08 pywal
 # 2024-01-08 Monitor Resolution
 
-wal -q --vte -i Images/WallpapersDesktop/wallhaven-vg52ql_1920x1080.png
+wal --cols16 lighten --vte -R -s -w
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -66,7 +66,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
+# under VCS as dirty. This edits repository status check for large repositories
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
@@ -119,8 +119,8 @@ source $ZSH/oh-my-zsh.sh
 # Shell config
 #
 
-alias confzsh="sudo -Es nvim $HOME/.zshrc"
-alias makezsh="source $HOME/.zshrc"
+alias editzsh="sudo -Es nvim $HOME/.zshrc"
+alias compzsh="source $HOME/.zshrc"
 alias c="wipeclean"
 alias myalias="grep --only-matching '^alias\s\w*' .zshrc | less" 
 alias fonts="fc-list | cut -f2 -d: | sort -u | less -r"
@@ -132,10 +132,10 @@ alias nvim="sudo -Es nvim"
 
 
 
-alias pushdots="$HOME/GitHub/Linux-Dotfiles/repositoryupdate.sh"
-alias pullenv="$HOME/GitHub/Linux-Dotfiles/updatesys.sh && makezsh"
-alias pullwl="$HOME/GitHub/Linux-Dotfiles/updatesyswl.sh"
-alias pullx="$HOME/GitHub/Linux-Dotfiles/updatesysx.sh"
+alias pushdots="$HOME/repository/Linux-Dotfiles/repositoryupdate.sh"
+alias pullenv="$HOME/repository/Linux-Dotfiles/updatesys.sh && editzsh"
+alias pullwl="$HOME/repository/Linux-Dotfiles/updatesyswl.sh"
+alias pullx="$HOME/repository/Linux-Dotfiles/updatesysx.sh"
 
 # Timetracking
 
@@ -144,15 +144,15 @@ alias work="upwork && sleep 5 && slack && sleep && google-chrome-stable  && slee
 
 # bootloader configs
 
-alias confgrub="sudo -Es nvim /etc/default/grub"
-alias makegrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias editgrub="sudo -Es nvim /etc/default/grub"
+alias compgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # Terminal
 #
 
-alias confalacritty="sudo -Es nvim $HOME/.config/alacritty/alacritty.yml"
-alias confst="sudo -Es nvim $HOME/.config/suckless/st/config.def.h"
-alias makest="cd $HOME/.config/suckless/st && sudo cp st/config.def.h st/config.h && cd st && sudo make clean install && cd $HOME"
+alias editalacritty="sudo -Es nvim $HOME/.config/alacritty/alacritty.yml"
+alias editst="sudo -Es nvim $HOME/.config/suckless/st/config.def.h"
+alias compst="cd $HOME/.config/suckless/st && sudo cp st/config.def.h st/config.h && cd st && sudo make clean install && cd $HOME"
 
 # servers
 
@@ -164,26 +164,26 @@ alias pyserver="/bin/python $HOME/Python-Projects/server/server.py"
 # Xorg config
 #
 
-alias confx="sudo -Es nvim $HOME/.xinitrc"
-alias confdwm="sudo -Es nvim $HOME/.config/suckless/dwm/config.def.h"
-alias makedwm="cd $HOME/.config/suckless/dwm && sudo rm config.h && sed -i '/SchemeUrg/d' $HOME/.cache/wal/colors-wal-dwm.h && sudo make clean install && cd $HOME"
+alias editx="sudo -Es nvim $HOME/.xinitrc"
+alias editdwm="sudo -Es nvim $HOME/.config/suckless/dwm/config.def.h"
+alias compdwm="cd $HOME/.config/suckless/dwm && sudo rm config.h && sed -i '/SchemeUrg/d' $HOME/.cache/wal/colors-wal-dwm.h && sudo make clean install && cd $HOME"
 alias exitdwm="pkill -15 Xorg"
 alias waldwm="sudo -Es nvim $HOME/.cache/wal/colors-wal-dwm.h"
 
 # Wayland
 #
 
-alias confsway="sudo -Es nvim $HOME/.config/sway/config"
-alias confwbar="sudo -Es nvim $HOME/.config/waybar/config"
-alias confwbars="sudo -Es nvim $HOME/.config/waybar/style.css"
+alias editsway="sudo -Es nvim $HOME/.config/sway/config"
+alias editwbar="sudo -Es nvim $HOME/.config/waybar/config"
+alias editwbars="sudo -Es nvim $HOME/.config/waybar/style.css"
 alias barupdate="sudo /bin/python $HOME/Python-Projects/shellupdate/updatebartui.py"
 alias wipewofi="sudo $HOME/Linux-Dotfiles/wofifilter.sh"
-alias confmako="sudo -Es nvim $HOME/.config/mako/config"
+alias editmako="sudo -Es nvim $HOME/.config/mako/config"
 
 # Application configs
 
-alias confnvim="sudo -Es nvim $HOME/.config/nvim/init.vim"
-alias conftmux="sudo -Es nvim $HOME/.tmux.conf"
+alias editnvim="sudo -Es nvim $HOME/.config/nvim/init.vim"
+alias edittmux="sudo -Es nvim $HOME/.tmux.conf"
 alias btop="btop --utf-force"
 alias mupdf="mupdf -I -r 140 -C 000000"
 alias book="mupdf -I -r 140 -C 000000 $HOME/Books/*"
@@ -192,41 +192,44 @@ alias dance="mpv $HOME/Videos/GIF/cockroach.gif & mpv $HOME/Videos/GIF/t-rex-fro
 # Python Scripts
 
 alias makepyvenv="python -m venv ."
-alias makepip="python -m ensurepip --upgrade"
-alias calctui="/bin/python $HOME/GitHub/Python-Projects/calculator/calctui.py"
-alias calcgui="/bin/python $HOME/GitHub/Python-Projects/calculator/calcgui.py"
-alias makepy="$HOME/GitHub/Linux-Dotfiles/updatepython.sh"
-alias autoclick="/bin/python $HOME/GitHub/Python-Projects/cursor/autoclick.py"
-alias afkpress="/bin/python $HOME/GitHub/Python-Projects/cursor/afkpress.py"
-alias afkmove="/bin/python $HOME/GitHub/Python-Projects/cursor/afkmove.py"
-alias idlescroll="/bin/python $HOME/GitHub/Python-Projects/cursor/afkscroll.py"
-alias typespam="/bin/python $HOME/GitHub/Python-Projects/spambot/typespam.py"
-alias filespam="/bin/python $HOME/GitHub/Python-Projects/spambot/filespam.py"
-alias keylogger="/bin/python $HOME/GitHub/Python-Projects/keylogger/keylogger.py"
-alias birthday="/bin/python $HOME/GitHub/Python-Projects/birthdaywisher/happybirthday.py"
-alias meditate="/bin/python $HOME/GitHub/Python-Projects/meditation/meditate.py"
-alias voassist="/bin/python $HOME/GitHub/Python-Projects/voiceassistant/voasst.py"
-alias votyper="/bin/python $HOME/GitHub/Python-Projects/voiceassistant/voicetyper.py"
-alias tts="/bin/python $HOME/GitHub/Python-Projects/voiceassistant/TTS.py"
-alias meetcli="$HOME/GitHub/Python-Projects/selenium/meetcli.sh"
-alias meetgui="$HOME/GitHub/Python-Projects/selenium/meetgui.sh"
-alias netspeed="/bin/python $HOME/GitHub/Python-Projects/internetspeed/speedprinter.py"
-alias wolfram="/bin/python $HOME/GitHub/Python-Projects/wolramalpha/apicaller.py"
-alias twitterbot="$HOME/GitHub/Python-Twitter-Bot/twitterbot.sh"
-alias redditbot="$HOME/GitHub/Python-Reddit-Bot/redditbot.sh"
-alias discordbot="$HOME/GitHub/Python-Discord-bot/discordbot.sh"
+alias editpip="python -m ensurepip --upgrade"
+alias calctui="/bin/python $HOME/repository/Python-Projects/calculator/calctui.py"
+alias calcgui="/bin/python $HOME/repository/Python-Projects/calculator/calcgui.py"
+alias editpy="$HOME/repository/Linux-Dotfiles/updatepython.sh"
+alias autoclick="/bin/python $HOME/repository/Python-Projects/cursor/autoclick.py"
+alias afkpress="/bin/python $HOME/repository/Python-Projects/cursor/afkpress.py"
+alias afkmove="/bin/python $HOME/repository/Python-Projects/cursor/afkmove.py"
+alias idlescroll="/bin/python $HOME/repository/Python-Projects/cursor/afkscroll.py"
+alias typespam="/bin/python $HOME/repository/Python-Projects/spambot/typespam.py"
+alias filespam="/bin/python $HOME/repository/Python-Projects/spambot/filespam.py"
+alias keylogger="/bin/python $HOME/repository/Python-Projects/keylogger/keylogger.py"
+alias birthday="/bin/python $HOME/repository/Python-Projects/birthdaywisher/happybirthday.py"
+alias meditate="/bin/python $HOME/repository/Python-Projects/meditation/meditate.py"
+alias voassist="/bin/python $HOME/repository/Python-Projects/voiceassistant/voasst.py"
+alias votyper="/bin/python $HOME/repository/Python-Projects/voiceassistant/voicetyper.py"
+alias tts="/bin/python $HOME/repository/Python-Projects/voiceassistant/TTS.py"
+alias meetcli="$HOME/repository/Python-Projects/selenium/meetcli.sh"
+alias meetgui="$HOME/repository/Python-Projects/selenium/meetgui.sh"
+alias netspeed="/bin/python $HOME/repository/Python-Projects/internetspeed/speedprinter.py"
+alias wolfram="/bin/python $HOME/repository/Python-Projects/wolramalpha/apicaller.py"
+alias twitterbot="$HOME/repository/Python-Twitter-Bot/twitterbot.sh"
+alias redditbot="$HOME/repository/Python-Reddit-Bot/redditbot.sh"
+alias discordbot="$HOME/repository/Python-Discord-bot/discordbot.sh"
 
 # ADB 
 #
 
-alias adbcheck="$HOME/GitHub/Android-Projects/adb-linux/adbcheck.sh"
-alias adbrestart="$HOME/GitHub/Android-Projects/adb-linux/adbrestart.sh"
+alias adbcheck="$HOME/repository/Android-Projects/adb-linux/adbcheck.sh"
+alias adbrestart="$HOME/repository/Android-Projects/adb-linux/adbrestart.sh"
 
 # Scrcpy
 #
 
-alias scrcpy="$HOME/GitHub/Android-Projects/adb-linux/scrcpystart.sh"
-alias scrcpyrec="$HOME/GitHub/Android-Projects/adb-linux/scrcpyrec.sh"
+alias scrcpy="$HOME/repository/Android-Projects/adb-linux/scrcpystart.sh"
+alias scrcpyrec="$HOME/repository/Android-Projects/adb-linux/scrcpyrec.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Created by `pipx` on 2024-07-24 12:50:46
+export PATH="$PATH:/home/wardoflores/.local/bin"

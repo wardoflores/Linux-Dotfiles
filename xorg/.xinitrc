@@ -46,12 +46,12 @@ fi
 #xrandr --addmode DP2 "1920x1080_60.00" &
 #xrandr --output DP2 --mode "1920x1080_60.00" &
 
-./1920x1080.sh &
+./repository/Terminal-Projects/1920x1080.sh &
 
 # redshift
 #
 
-redshift -l "7.07306:125.61278" -b 0.5 &
+redshift -l "7.07306:125.61278" -b 1.0:0.5 -t 1000:25000 &
 
 # dwmstatus
 #

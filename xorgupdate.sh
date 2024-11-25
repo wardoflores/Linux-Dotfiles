@@ -12,13 +12,13 @@ sudo cp $HOME/Linux-Dotfiles/xorg/50-mouse-acceleration.conf /etc/X11/xorg.conf.
 
 cd $HOME/.config/suckless/
 
-sudo cp -r $HOME/GitHub/Linux-Dotfiles/xorg/suckless/dwm/ $HOME/.config/suckless/
+sudo cp -r $HOME/repository/Linux-Dotfiles/xorg/suckless/dwm/ $HOME/.config/suckless/
 
-sudo cp -r $HOME/GitHub/Linux-Dotfiles/xorg/suckless/dmenu/ $HOME/.config/suckless/
+sudo cp -r $HOME/repository/Linux-Dotfiles/xorg/suckless/dmenu/ $HOME/.config/suckless/
 
-sudo cp -r $HOME/GitHub/Linux-Dotfiles/xorg/suckless/slstatus/ $HOME/.config/suckless/
+sudo cp -r $HOME/repository/Linux-Dotfiles/xorg/suckless/slstatus/ $HOME/.config/suckless/
 
-sudo cp -r $HOME/GitHub/Linux-Dotfiles/xorg/suckless/st/ $HOME/.config/suckless/
+sudo cp -r $HOME/repository/Linux-Dotfiles/xorg/suckless/st/ $HOME/.config/suckless/
 
 
 

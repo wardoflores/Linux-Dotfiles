@@ -9,15 +9,15 @@
 
 cd $HOME
 
-sudo cp $HOME/GitHub/Linux-Dotfiles/zsh/.zshrc .zshrc
+sudo cp $HOME/repository/Linux-Dotfiles/zsh/.zshrc .zshrc
 
 cd $HOME/.config/nvim/
 
-sudo cp $HOME/GitHub/Linux-Dotfiles/applications/neovim/init.vim init.vim
+sudo cp $HOME/repository/Linux-Dotfiles/applications/neovim/init.vim init.vim
 
 cd /etc
 
-sudo cp $HOME/GitHub/Linux-Dotflies/system/grub grub
-sudo cp $HOME/GitHub/Linux-Dotfiles/system/environment environment
-sudo cp $HOME/GitHub/Linux-Dotfiles/system/hosts hosts
+sudo cp $HOME/repository/Linux-Dotflies/system/grub grub
+sudo cp $HOME/repository/Linux-Dotfiles/system/environment environment
+sudo cp $HOME/repository/Linux-Dotfiles/system/hosts hosts
 

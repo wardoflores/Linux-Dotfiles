@@ -35,4 +35,4 @@ QT_IM_MODULE='ibus'
 XMODIFIERS=@im='ibus'
 #
 # 2024-02-06 hledger
-LEDGER_FILE=~/GitHub/Obsidian-Personal-Vault/wardoflores.ledger
+LEDGER_FILE=~/repository/Obsidian-Personal-Vault/wardoflores.ledger
