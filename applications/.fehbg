@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/wardoflores/Images/WallpapersDesktop/wallhaven-yx32j7_1920x1080.png' 

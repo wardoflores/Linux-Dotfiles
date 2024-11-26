@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/wardoflores/.config/wpg/wallpapers/choice1.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#080A16",
+        "foreground": "#ffdedf",
+        "cursor": "#ffdedf"
+    },
+    "colors": {
+        "color0": "#080A16",
+        "color1": "#914065",
+        "color2": "#AC7686",
+        "color3": "#CC7787",
+        "color4": "#6D7087",
+        "color5": "#FE7D84",
+        "color6": "#B797A0",
+        "color7": "#f5bebf",
+        "color8": "#141a3b",
+        "color9": "#ca4582",
+        "color10": "#f286a6",
+        "color11": "#ff85a2",
+        "color12": "#7d85bf",
+        "color13": "#ff8995",
+        "color14": "#ffaec6",
+        "color15": "#ffdedf"
+    }
+}

@@ -1,0 +1,14 @@
+[Added Associations]
+text/plain=nvim.desktop;
+image/jpeg=feh.desktop;
+text/html=firefox.desktop;
+application/x.systemd-journal=nvim.desktop;mupdf.desktop;
+
+[Default Applications]
+x-scheme-handler/discord-475456035851599874=discord-475456035851599874.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+application/x.systemd-journal=mupdf.desktop

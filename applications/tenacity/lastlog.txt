@@ -1,0 +1,11 @@
+11:36:48 PM: Tenacity 1.3.3
+11:36:48 PM: Error: Couldn't find symbol 'av_oformat_next' in a dynamic library: /usr/lib/libavformat.so.60: undefined symbol: av_oformat_next
+11:36:48 PM: Error: Couldn't find symbol 'av_register_all' in a dynamic library: /usr/lib/libavformat.so.60: undefined symbol: av_register_all
+11:36:48 PM: Error: Couldn't find symbol 'avcodec_decode_audio4' in a dynamic library: /usr/lib/libavformat.so.60: undefined symbol: avcodec_decode_audio4
+11:36:48 PM: Error: Couldn't find symbol 'avcodec_encode_audio2' in a dynamic library: /usr/lib/libavformat.so.60: undefined symbol: avcodec_encode_audio2
+11:36:48 PM: Error: Couldn't find symbol 'avcodec_register_all' in a dynamic library: /usr/lib/libavformat.so.60: undefined symbol: avcodec_register_all
+11:36:48 PM: Error: Couldn't find symbol 'av_codec_next' in a dynamic library: /usr/lib/libavformat.so.60: undefined symbol: av_codec_next
+11:36:55 PM: sqlite3 message: (283) recovered 20516 frames from WAL file /var/tmp/tenacity-wardoflores/New Project 2024-01-16 23-18-08 N-1.aup3unsaved-wal
+11:36:55 PM: Loaded 61 string 2.257812 Kb in size
+11:36:55 PM: Total orphan blocks deleted 115
+11:36:56 PM: Project loaded in 1103 ms

@@ -1,0 +1,5 @@
+# HSTS 1.0 Known Hosts database for GNU Wget.
+# Edit at your own risk.
+# <hostname>	<port>	<incl. subdomains>	<created>	<max-age>
+nvim-neorocks.github.io	0	0	1721555764	31556952
+github.com	0	1	1721497924	31536000
